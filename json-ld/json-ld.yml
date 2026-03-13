@@ -1,0 +1,15 @@
+"@context":
+  "@vocab": https://schema.org/
+  name: name
+  description: description
+  url: url
+"@type": WebAPI
+name: Amazon MemoryDB API
+description: >-
+  Amazon MemoryDB is a durable, in-memory database service that delivers
+  ultra-fast performance, compatible with Redis and Memcached.
+url: https://aws.amazon.com/memorydb/
+provider:
+  "@type": Organization
+  name: Amazon Web Services
+  url: https://aws.amazon.com/

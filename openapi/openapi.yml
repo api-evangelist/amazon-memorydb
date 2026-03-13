@@ -1,0 +1,13 @@
+openapi: 3.0.0
+info:
+  title: Amazon MemoryDB API
+  description: >-
+    Amazon MemoryDB is a durable, in-memory database service that delivers
+    ultra-fast performance, compatible with Redis and Memcached.
+  version: '2021-01-01'
+  contact:
+    name: Kin Lane
+    email: kin@apievangelist.com
+servers:
+  - url: https://memory-db.amazonaws.com
+paths: {}
