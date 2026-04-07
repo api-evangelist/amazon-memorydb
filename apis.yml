@@ -1,15 +1,12 @@
 name: Amazon MemoryDB
 description: >-
-  Amazon MemoryDB is a durable, in-memory database service that delivers
-  ultra-fast performance. It is purpose-built for modern applications with
-  microservices architectures. MemoryDB is compatible with Redis and
-  Memcached, giving you the flexibility to use the same popular and open
-  source data structures, APIs, and commands that they already use today.
-  With MemoryDB, all of your data is stored in memory, which enables you
-  to achieve microsecond reads and single-digit millisecond writes with
-  high throughput. It also durably stores data across multiple Availability
-  Zones using a distributed transactional log.
-image: https://a0.awsstatic.com/libra-css/images/logos/aws_logo_smile_1200x630.png
+  Amazon MemoryDB is a durable, in-memory database service that delivers ultra-fast
+  performance. It is purpose-built for modern applications with microservices architectures.
+  MemoryDB is compatible with Redis and Memcached, giving you the flexibility to use
+  the same popular and open source data structures, APIs, and commands that they already
+  use today.
+image: 
+  https://a0.awsstatic.com/libra-css/images/logos/aws_logo_smile_1200x630.png
 url: https://apis.io/amazon-memorydb
 created: '2024-01-15'
 modified: '2026-03-16'
@@ -20,11 +17,13 @@ apis:
       The Amazon MemoryDB API provides programmatic access to create and manage
       MemoryDB clusters, parameter groups, subnet groups, snapshots, users,
       and ACLs for Redis-compatible in-memory databases.
-    image: https://a0.awsstatic.com/libra-css/images/logos/aws_logo_smile_1200x630.png
+    image: 
+      https://a0.awsstatic.com/libra-css/images/logos/aws_logo_smile_1200x630.png
     baseURL: https://memory-db.amazonaws.com
     properties:
       - type: documentation
-        url: https://docs.aws.amazon.com/memorydb/latest/devguide/what-is-memorydb.html
+        url: 
+          https://docs.aws.amazon.com/memorydb/latest/devguide/what-is-memorydb.html
       - type: openapi
         url: openapi/openapi.yml
       - type: openapi
