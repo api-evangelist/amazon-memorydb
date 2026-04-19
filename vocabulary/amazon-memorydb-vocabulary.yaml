@@ -1,0 +1,284 @@
+vocabulary: 1.0.0
+info:
+  provider: Amazon MemoryDB
+  description: Unified vocabulary for Amazon MemoryDB APIs and capabilities.
+  created: '2026-04-19'
+  modified: '2026-04-19'
+operational:
+  apis:
+  - name: Amazon MemoryDB API
+    namespace: memorydb
+    version: '2018-11-14'
+    baseUrl: https://memory-db.us-east-1.amazonaws.com
+    status: active
+  resources:
+  - name: acls
+    api: Amazon MemoryDB API
+    actions:
+    - list
+    - get
+    - create
+    - update
+    - delete
+  - name: clusters
+    api: Amazon MemoryDB API
+    actions:
+    - list
+    - get
+    - create
+    - update
+    - delete
+  - name: engineversions
+    api: Amazon MemoryDB API
+    actions:
+    - list
+    - get
+    - create
+    - update
+    - delete
+  - name: events
+    api: Amazon MemoryDB API
+    actions:
+    - list
+    - get
+    - create
+    - update
+    - delete
+  - name: nodetypes
+    api: Amazon MemoryDB API
+    actions:
+    - list
+    - get
+    - create
+    - update
+    - delete
+  - name: parametergroups
+    api: Amazon MemoryDB API
+    actions:
+    - list
+    - get
+    - create
+    - update
+    - delete
+  - name: reservednodes
+    api: Amazon MemoryDB API
+    actions:
+    - list
+    - get
+    - create
+    - update
+    - delete
+  - name: describereservednodesofferings
+    api: Amazon MemoryDB API
+    actions:
+    - list
+    - get
+    - create
+    - update
+    - delete
+  - name: shards
+    api: Amazon MemoryDB API
+    actions:
+    - list
+    - get
+    - create
+    - update
+    - delete
+  - name: snapshots
+    api: Amazon MemoryDB API
+    actions:
+    - list
+    - get
+    - create
+    - update
+    - delete
+  - name: copysnapshot
+    api: Amazon MemoryDB API
+    actions:
+    - list
+    - get
+    - create
+    - update
+    - delete
+  - name: subnetgroups
+    api: Amazon MemoryDB API
+    actions:
+    - list
+    - get
+    - create
+    - update
+    - delete
+  - name: tags
+    api: Amazon MemoryDB API
+    actions:
+    - list
+    - get
+    - create
+    - update
+    - delete
+  - name: users
+    api: Amazon MemoryDB API
+    actions:
+    - list
+    - get
+    - create
+    - update
+    - delete
+  actions:
+  - name: list
+    httpMethod: GET
+    pattern: read
+  - name: get
+    httpMethod: GET
+    pattern: read
+  - name: create
+    httpMethod: POST
+    pattern: write
+  - name: update
+    httpMethod: PUT
+    pattern: write
+  - name: delete
+    httpMethod: DELETE
+    pattern: write
+  schemas:
+    core:
+    - ACL
+    - Cluster
+    - CreateClusterRequest
+    - DescribeClustersResponse
+    - ParameterGroup
+    - Snapshot
+    - SubnetGroup
+    - Tag
+    - User
+  parameters:
+    pagination:
+    - name: nextToken
+      description: Pagination token
+    - name: maxResults
+      description: Max results per page
+  authentication:
+    schemes:
+    - type: awsSigV4
+      description: AWS Signature Version 4
+capability:
+  workflows:
+  - name: Amazon MemoryDB Workflow
+    file: capabilities/amazon-memorydb-media-workflow.yaml
+    description: Amazon MemoryDB media processing workflow
+    personas:
+    - Broadcast Engineer
+    - Media Developer
+    domains:
+    - Media Processing
+  personas:
+  - id: broadcast-engineer
+    name: Broadcast Engineer
+    description: Engineer managing broadcast media workflows
+    workflows:
+    - Amazon MemoryDB Workflow
+  - id: media-developer
+    name: Media Developer
+    description: Developer building media processing applications
+    workflows:
+    - Amazon MemoryDB Workflow
+  domains:
+  - name: Media Processing
+    description: AWS media processing and delivery
+  namespaces:
+  - name: memorydb
+    type: consumed
+  - name: memorydb-workflow-api
+    type: rest
+    port: 8080
+  - name: memorydb-workflow-mcp
+    type: mcp
+    port: 9090
+  binds:
+  - name: AWS_ACCESS_KEY_ID
+  - name: AWS_SECRET_ACCESS_KEY
+crossReference:
+- resource: acls
+  api: Amazon MemoryDB API
+  workflows:
+  - Amazon MemoryDB Workflow
+  personas:
+  - Broadcast Engineer
+- resource: clusters
+  api: Amazon MemoryDB API
+  workflows:
+  - Amazon MemoryDB Workflow
+  personas:
+  - Broadcast Engineer
+- resource: engineversions
+  api: Amazon MemoryDB API
+  workflows:
+  - Amazon MemoryDB Workflow
+  personas:
+  - Broadcast Engineer
+- resource: events
+  api: Amazon MemoryDB API
+  workflows:
+  - Amazon MemoryDB Workflow
+  personas:
+  - Broadcast Engineer
+- resource: nodetypes
+  api: Amazon MemoryDB API
+  workflows:
+  - Amazon MemoryDB Workflow
+  personas:
+  - Broadcast Engineer
+- resource: parametergroups
+  api: Amazon MemoryDB API
+  workflows:
+  - Amazon MemoryDB Workflow
+  personas:
+  - Broadcast Engineer
+- resource: reservednodes
+  api: Amazon MemoryDB API
+  workflows:
+  - Amazon MemoryDB Workflow
+  personas:
+  - Broadcast Engineer
+- resource: describereservednodesofferings
+  api: Amazon MemoryDB API
+  workflows:
+  - Amazon MemoryDB Workflow
+  personas:
+  - Broadcast Engineer
+- resource: shards
+  api: Amazon MemoryDB API
+  workflows:
+  - Amazon MemoryDB Workflow
+  personas:
+  - Broadcast Engineer
+- resource: snapshots
+  api: Amazon MemoryDB API
+  workflows:
+  - Amazon MemoryDB Workflow
+  personas:
+  - Broadcast Engineer
+- resource: copysnapshot
+  api: Amazon MemoryDB API
+  workflows:
+  - Amazon MemoryDB Workflow
+  personas:
+  - Broadcast Engineer
+- resource: subnetgroups
+  api: Amazon MemoryDB API
+  workflows:
+  - Amazon MemoryDB Workflow
+  personas:
+  - Broadcast Engineer
+- resource: tags
+  api: Amazon MemoryDB API
+  workflows:
+  - Amazon MemoryDB Workflow
+  personas:
+  - Broadcast Engineer
+- resource: users
+  api: Amazon MemoryDB API
+  workflows:
+  - Amazon MemoryDB Workflow
+  personas:
+  - Broadcast Engineer

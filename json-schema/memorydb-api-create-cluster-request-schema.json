@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-memorydb/refs/heads/main/json-schema/memorydb-api-create-cluster-request-schema.json",
+  "title": "CreateClusterRequest",
+  "description": "CreateClusterRequest schema from Amazon MemoryDB API",
+  "type": "object",
+  "properties": {
+    "ACLName": {
+      "description": "The name of the Access Control List to associate with the cluster.",
+      "type": "string"
+    },
+    "ClusterName": {
+      "description": "The name of the cluster.",
+      "type": "string"
+    },
+    "Description": {
+      "description": "An optional description of the cluster.",
+      "type": "string"
+    },
+    "EngineVersion": {
+      "description": "The version number of the Redis engine to use.",
+      "type": "string"
+    },
+    "NodeType": {
+      "description": "The compute and memory capacity of the nodes.",
+      "type": "string"
+    },
+    "NumReplicasPerShard": {
+      "description": "The number of replicas to apply to each shard.",
+      "type": "integer"
+    },
+    "NumShards": {
+      "description": "The number of shards the cluster will contain.",
+      "type": "integer"
+    },
+    "TLSEnabled": {
+      "description": "A flag to enable in-transit encryption.",
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "ClusterName",
+    "NodeType",
+    "ACLName"
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "ACLName": "example-resource",
+  "ClusterName": "example-resource",
+  "Description": "example-value",
+  "EngineVersion": "example-value",
+  "NodeType": "STANDARD",
+  "NumReplicasPerShard": 22,
+  "NumShards": 29,
+  "TLSEnabled": true
+}

@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-memorydb/refs/heads/main/json-structure/memorydb-api-tag-structure.json",
+  "name": "Tag",
+  "type": "object",
+  "description": "A tag that can be added to an MemoryDB resource.",
+  "properties": {
+    "Key": {
+      "type": "string",
+      "description": "The key for the tag."
+    },
+    "Value": {
+      "type": "string",
+      "description": "The tag's value."
+    }
+  }
+}

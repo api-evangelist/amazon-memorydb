@@ -1,0 +1,11 @@
+{
+  "ARN": "arn:aws:service:us-east-1:123456789012:resource/example",
+  "AvailabilityMode": "SingleAZ",
+  "Description": "example-value",
+  "EngineVersion": "example-value",
+  "Name": "example-resource",
+  "NodeType": "STANDARD",
+  "NumberOfShards": 71,
+  "Status": "ACTIVE",
+  "TLSEnabled": true
+}

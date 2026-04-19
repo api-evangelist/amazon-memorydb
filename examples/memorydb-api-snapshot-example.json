@@ -1,0 +1,7 @@
+{
+  "ARN": "arn:aws:service:us-east-1:123456789012:resource/example",
+  "ClusterConfiguration": {},
+  "KmsKeyId": "id-abc123",
+  "Name": "example-resource",
+  "Status": "ACTIVE"
+}

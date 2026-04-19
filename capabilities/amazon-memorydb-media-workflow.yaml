@@ -1,0 +1,116 @@
+naftiko: 1.0.0-alpha1
+info:
+  label: Amazon MemoryDB Workflow
+  description: Workflow capability for Amazon MemoryDB media processing operations for broadcast engineers and media developers.
+  tags:
+  - AWS
+  - Media
+  - Broadcasting
+  - Workflow
+  created: '2026-04-19'
+  modified: '2026-04-19'
+binds:
+- namespace: env
+  keys:
+    AWS_ACCESS_KEY_ID: AWS_ACCESS_KEY_ID
+    AWS_SECRET_ACCESS_KEY: AWS_SECRET_ACCESS_KEY
+    AWS_REGION: AWS_REGION
+capability:
+  consumes:
+  - import: memorydb
+    location: ./shared/memorydb.yaml
+  exposes:
+  - type: rest
+    port: 8080
+    namespace: memorydb-workflow-api
+    description: Unified REST API for Amazon MemoryDB workflow management.
+    resources:
+    - path: /v1/jobs
+      name: jobs
+      description: Manage media processing jobs
+      operations:
+      - method: GET
+        name: list-jobs
+        description: List jobs
+        call: memorydb.list-jobs
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    port: 9090
+    namespace: memorydb-workflow-mcp
+    transport: http
+    description: MCP server for AI-assisted Amazon MemoryDB workflow management.
+    tools:
+    - name: describe-ac-ls
+      description: Amazon MemoryDB DescribeACLs
+      hints:
+        readOnly: true
+        openWorld: true
+      call: memorydb.describe-ac-ls
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: create-acl
+      description: Amazon MemoryDB CreateACL
+      hints:
+        readOnly: false
+        openWorld: true
+      call: memorydb.create-acl
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: update-acl
+      description: Amazon MemoryDB UpdateACL
+      hints:
+        readOnly: false
+        openWorld: true
+      call: memorydb.update-acl
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: delete-acl
+      description: Amazon MemoryDB DeleteACL
+      hints:
+        readOnly: false
+        openWorld: true
+      call: memorydb.delete-acl
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: describe-clusters
+      description: Amazon MemoryDB DescribeClusters
+      hints:
+        readOnly: true
+        openWorld: true
+      call: memorydb.describe-clusters
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: create-cluster
+      description: Amazon MemoryDB CreateCluster
+      hints:
+        readOnly: false
+        openWorld: true
+      call: memorydb.create-cluster
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: update-cluster
+      description: Amazon MemoryDB UpdateCluster
+      hints:
+        readOnly: false
+        openWorld: true
+      call: memorydb.update-cluster
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: delete-cluster
+      description: Amazon MemoryDB DeleteCluster
+      hints:
+        readOnly: false
+        openWorld: true
+      call: memorydb.delete-cluster
+      outputParameters:
+      - type: object
+        mapping: $.

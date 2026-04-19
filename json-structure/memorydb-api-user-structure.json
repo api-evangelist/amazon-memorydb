@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-memorydb/refs/heads/main/json-structure/memorydb-api-user-structure.json",
+  "name": "User",
+  "type": "object",
+  "description": "Represents a MemoryDB user.",
+  "properties": {
+    "ACLNames": {
+      "type": "array",
+      "description": "The names of the Access Control Lists to which the user belongs.",
+      "items": {
+        "type": "string"
+      }
+    },
+    "ARN": {
+      "type": "string",
+      "description": "The Amazon Resource Name (ARN) of the user."
+    },
+    "Name": {
+      "type": "string",
+      "description": "The name of the user."
+    },
+    "Status": {
+      "type": "string",
+      "description": "Indicates the user status."
+    }
+  }
+}

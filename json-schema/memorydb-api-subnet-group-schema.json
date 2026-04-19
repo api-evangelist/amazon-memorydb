@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-memorydb/refs/heads/main/json-schema/memorydb-api-subnet-group-schema.json",
+  "title": "SubnetGroup",
+  "description": "Represents the output of one of the following operations: CreateSubnetGroup / DescribeSubnetGroups.",
+  "type": "object",
+  "properties": {
+    "ARN": {
+      "description": "The ARN of the subnet group.",
+      "type": "string"
+    },
+    "Description": {
+      "description": "A description of the subnet group.",
+      "type": "string"
+    },
+    "Name": {
+      "description": "The name of the subnet group.",
+      "type": "string"
+    },
+    "VpcId": {
+      "description": "The Amazon Virtual Private Cloud identifier (VPC ID) of the subnet group.",
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "pan": "https://pan.dev/schema/",
+    "schema": "https://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "ParameterGroup": "pan:ParameterGroup",
+    "Cluster": "pan:Cluster",
+    "Snapshot": "pan:Snapshot",
+    "SubnetGroup": "pan:SubnetGroup",
+    "ACL": "pan:ACL",
+    "CreateClusterRequest": "pan:CreateClusterRequest",
+    "User": "pan:User",
+    "Tag": "pan:Tag",
+    "DescribeClustersResponse": "pan:DescribeClustersResponse",
+    "arn": {
+      "@id": "pan:arn",
+      "@type": "xsd:string"
+    },
+    "description": "schema:description",
+    "family": {
+      "@id": "pan:family",
+      "@type": "xsd:string"
+    },
+    "name": "schema:name",
+    "availabilityMode": {
+      "@id": "pan:availability_mode",
+      "@type": "xsd:string"
+    },
+    "engineVersion": {
+      "@id": "pan:engine_version",
+      "@type": "xsd:string"
+    },
+    "nodeType": {
+      "@id": "pan:node_type",
+      "@type": "xsd:string"
+    },
+    "numberOfShards": {
+      "@id": "pan:number_of_shards",
+      "@type": "xsd:integer"
+    },
+    "status": {
+      "@id": "pan:status",
+      "@type": "xsd:string"
+    },
+    "tlsEnabled": {
+      "@id": "pan:tls_enabled",
+      "@type": "xsd:boolean"
+    },
+    "clusterConfiguration": {
+      "@id": "pan:cluster_configuration",
+      "@type": "@id"
+    },
+    "kmsKeyId": {
+      "@id": "pan:kms_key_id",
+      "@type": "xsd:string"
+    },
+    "vpcId": {
+      "@id": "pan:vpc_id",
+      "@type": "xsd:string"
+    },
+    "userNames": {
+      "@id": "pan:user_names",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "aclName": {
+      "@id": "pan:acl_name",
+      "@type": "xsd:string"
+    },
+    "clusterName": {
+      "@id": "pan:cluster_name",
+      "@type": "xsd:string"
+    },
+    "numReplicasPerShard": {
+      "@id": "pan:num_replicas_per_shard",
+      "@type": "xsd:integer"
+    },
+    "numShards": {
+      "@id": "pan:num_shards",
+      "@type": "xsd:integer"
+    },
+    "aclNames": {
+      "@id": "pan:acl_names",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "key": {
+      "@id": "pan:key",
+      "@type": "xsd:string"
+    },
+    "value": {
+      "@id": "pan:value",
+      "@type": "xsd:string"
+    },
+    "clusters": {
+      "@id": "pan:clusters",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "nextToken": {
+      "@id": "pan:next_token",
+      "@type": "xsd:string"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-memorydb/refs/heads/main/json-structure/memorydb-api-parameter-group-structure.json",
+  "name": "ParameterGroup",
+  "type": "object",
+  "description": "Represents the output of a CreateParameterGroup operation.",
+  "properties": {
+    "ARN": {
+      "type": "string",
+      "description": "The Amazon Resource Name (ARN) of the parameter group."
+    },
+    "Description": {
+      "type": "string",
+      "description": "A description of the parameter group."
+    },
+    "Family": {
+      "type": "string",
+      "description": "The name of the parameter group family."
+    },
+    "Name": {
+      "type": "string",
+      "description": "The name of the parameter group."
+    }
+  }
+}

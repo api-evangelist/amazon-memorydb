@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-memorydb/refs/heads/main/json-structure/memorydb-api-snapshot-structure.json",
+  "name": "Snapshot",
+  "type": "object",
+  "description": "Represents a copy of an entire cluster.",
+  "properties": {
+    "ARN": {
+      "type": "string",
+      "description": "The ARN of the snapshot."
+    },
+    "ClusterConfiguration": {
+      "type": "object",
+      "description": "The configuration of the cluster from which the snapshot was taken."
+    },
+    "KmsKeyId": {
+      "type": "string",
+      "description": "The ID of the KMS key used to encrypt the snapshot."
+    },
+    "Name": {
+      "type": "string",
+      "description": "The name of the snapshot."
+    },
+    "Status": {
+      "type": "string",
+      "description": "The status of the snapshot."
+    }
+  }
+}

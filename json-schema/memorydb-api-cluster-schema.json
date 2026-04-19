@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-memorydb/refs/heads/main/json-schema/memorydb-api-cluster-schema.json",
+  "title": "Cluster",
+  "description": "An Amazon MemoryDB cluster.",
+  "type": "object",
+  "properties": {
+    "ARN": {
+      "description": "The Amazon Resource Name (ARN) of the cluster.",
+      "type": "string"
+    },
+    "AvailabilityMode": {
+      "description": "Indicates if the cluster has a Multi-AZ configuration.",
+      "enum": [
+        "SingleAZ",
+        "MultiAZ"
+      ],
+      "type": "string"
+    },
+    "Description": {
+      "description": "A description of the cluster.",
+      "type": "string"
+    },
+    "EngineVersion": {
+      "description": "The Redis engine version the cluster is running.",
+      "type": "string"
+    },
+    "Name": {
+      "description": "The user-supplied name of the cluster.",
+      "type": "string"
+    },
+    "NodeType": {
+      "description": "The cluster's node type.",
+      "type": "string"
+    },
+    "NumberOfShards": {
+      "description": "The number of shards in the cluster.",
+      "type": "integer"
+    },
+    "Status": {
+      "description": "The status of the cluster.",
+      "type": "string"
+    },
+    "TLSEnabled": {
+      "description": "A flag to indicate if In-transit encryption is enabled.",
+      "type": "boolean"
+    }
+  }
+}

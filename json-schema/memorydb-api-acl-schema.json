@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-memorydb/refs/heads/main/json-schema/memorydb-api-acl-schema.json",
+  "title": "ACL",
+  "description": "An Access Control List.",
+  "type": "object",
+  "properties": {
+    "ARN": {
+      "description": "The Amazon Resource Name (ARN) of the ACL.",
+      "type": "string"
+    },
+    "Name": {
+      "description": "The name of the Access Control List.",
+      "type": "string"
+    },
+    "Status": {
+      "description": "Indicates the current status of the ACL.",
+      "type": "string"
+    },
+    "UserNames": {
+      "description": "The list of user names that belong to the ACL.",
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    }
+  }
+}

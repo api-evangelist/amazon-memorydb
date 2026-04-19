@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-memorydb/refs/heads/main/json-schema/memorydb-api-describe-clusters-response-schema.json",
+  "title": "DescribeClustersResponse",
+  "description": "DescribeClustersResponse schema from Amazon MemoryDB API",
+  "type": "object",
+  "properties": {
+    "Clusters": {
+      "description": "A list of clusters.",
+      "items": {
+        "$ref": "#/components/schemas/Cluster"
+      },
+      "type": "array"
+    },
+    "NextToken": {
+      "description": "An optional argument to pass in case the total number of records exceeds the value of MaxResults.",
+      "type": "string"
+    }
+  }
+}
