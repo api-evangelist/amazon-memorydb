@@ -1,0 +1,167 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Amazon MemoryDB — SubnetGroups
+  description: 'Amazon MemoryDB — SubnetGroups. 4 operations. Lead operation: Amazon MemoryDB DeleteSubnetGroup. Self-contained
+    Naftiko capability covering one Amazon Memorydb business surface.'
+  tags:
+  - Amazon Memorydb
+  - SubnetGroups
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    AMAZON_MEMORYDB_API_KEY: AMAZON_MEMORYDB_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: amazon-memorydb-subnetgroups
+    baseUri: https://memory-db.us-east-1.amazonaws.com
+    description: Amazon MemoryDB — SubnetGroups business capability. Self-contained, no shared references.
+    resources:
+    - name: subnetgroups
+      path: /subnetgroups
+      operations:
+      - name: deletesubnetgroup
+        method: DELETE
+        description: Amazon MemoryDB DeleteSubnetGroup
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: describesubnetgroups
+        method: GET
+        description: Amazon MemoryDB DescribeSubnetGroups
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: createsubnetgroup
+        method: POST
+        description: Amazon MemoryDB CreateSubnetGroup
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: updatesubnetgroup
+        method: PUT
+        description: Amazon MemoryDB UpdateSubnetGroup
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: apikey
+      key: Authorization
+      value: '{{env.AMAZON_MEMORYDB_API_KEY}}'
+      placement: header
+  exposes:
+  - type: rest
+    namespace: amazon-memorydb-subnetgroups-rest
+    port: 8080
+    description: REST adapter for Amazon MemoryDB — SubnetGroups. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/subnetgroups
+      name: subnetgroups
+      description: REST surface for subnetgroups.
+      operations:
+      - method: DELETE
+        name: deletesubnetgroup
+        description: Amazon MemoryDB DeleteSubnetGroup
+        call: amazon-memorydb-subnetgroups.deletesubnetgroup
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: GET
+        name: describesubnetgroups
+        description: Amazon MemoryDB DescribeSubnetGroups
+        call: amazon-memorydb-subnetgroups.describesubnetgroups
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: createsubnetgroup
+        description: Amazon MemoryDB CreateSubnetGroup
+        call: amazon-memorydb-subnetgroups.createsubnetgroup
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PUT
+        name: updatesubnetgroup
+        description: Amazon MemoryDB UpdateSubnetGroup
+        call: amazon-memorydb-subnetgroups.updatesubnetgroup
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: amazon-memorydb-subnetgroups-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Amazon MemoryDB — SubnetGroups. One tool per consumed operation, routed inline through this
+      capability's consumes block.
+    tools:
+    - name: amazon-memorydb-deletesubnetgroup
+      description: Amazon MemoryDB DeleteSubnetGroup
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: amazon-memorydb-subnetgroups.deletesubnetgroup
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-memorydb-describesubnetgroups
+      description: Amazon MemoryDB DescribeSubnetGroups
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: amazon-memorydb-subnetgroups.describesubnetgroups
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-memorydb-createsubnetgroup
+      description: Amazon MemoryDB CreateSubnetGroup
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-memorydb-subnetgroups.createsubnetgroup
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-memorydb-updatesubnetgroup
+      description: Amazon MemoryDB UpdateSubnetGroup
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: amazon-memorydb-subnetgroups.updatesubnetgroup
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

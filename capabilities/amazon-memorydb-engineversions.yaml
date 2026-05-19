@@ -1,0 +1,72 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Amazon MemoryDB — EngineVersions
+  description: 'Amazon MemoryDB — EngineVersions. 1 operations. Lead operation: Amazon MemoryDB DescribeEngineVersions. Self-contained
+    Naftiko capability covering one Amazon Memorydb business surface.'
+  tags:
+  - Amazon Memorydb
+  - EngineVersions
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    AMAZON_MEMORYDB_API_KEY: AMAZON_MEMORYDB_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: amazon-memorydb-engineversions
+    baseUri: https://memory-db.us-east-1.amazonaws.com
+    description: Amazon MemoryDB — EngineVersions business capability. Self-contained, no shared references.
+    resources:
+    - name: engineversions
+      path: /engineversions
+      operations:
+      - name: describeengineversions
+        method: GET
+        description: Amazon MemoryDB DescribeEngineVersions
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: apikey
+      key: Authorization
+      value: '{{env.AMAZON_MEMORYDB_API_KEY}}'
+      placement: header
+  exposes:
+  - type: rest
+    namespace: amazon-memorydb-engineversions-rest
+    port: 8080
+    description: REST adapter for Amazon MemoryDB — EngineVersions. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/engineversions
+      name: engineversions
+      description: REST surface for engineversions.
+      operations:
+      - method: GET
+        name: describeengineversions
+        description: Amazon MemoryDB DescribeEngineVersions
+        call: amazon-memorydb-engineversions.describeengineversions
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: amazon-memorydb-engineversions-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Amazon MemoryDB — EngineVersions. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: amazon-memorydb-describeengineversions
+      description: Amazon MemoryDB DescribeEngineVersions
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: amazon-memorydb-engineversions.describeengineversions
+      outputParameters:
+      - type: object
+        mapping: $.

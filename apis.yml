@@ -1,7 +1,7 @@
 aid: amazon-memorydb
 name: Amazon MemoryDB
-description: Amazon MemoryDB for Redis is a durable, in-memory database service that delivers ultra-fast performance. It is Redis-compatible and provides microsecond reads, low single-digit 
-  millisecond writes, and enterprise-grade security.
+description: Amazon MemoryDB for Redis is a durable, in-memory database service that delivers ultra-fast performance. It is
+  Redis-compatible and provides microsecond reads, low single-digit millisecond writes, and enterprise-grade security.
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
@@ -11,13 +11,13 @@ tags:
 - Media
 url: https://raw.githubusercontent.com/api-evangelist/amazon-memorydb/refs/heads/main/apis.yml
 created: '2026-03-16'
-modified: '2026-04-19'
+modified: '2026-05-19'
 specificationVersion: '0.19'
 apis:
 - aid: amazon-memorydb:memorydb-api
   name: Amazon MemoryDB API
-  description: Amazon MemoryDB for Redis is a durable, in-memory database service that delivers ultra-fast performance. It is Redis-compatible and provides microsecond reads, low single-digit 
-    millisecond writes, and enterprise-grade security.
+  description: Amazon MemoryDB for Redis is a durable, in-memory database service that delivers ultra-fast performance. It
+    is Redis-compatible and provides microsecond reads, low single-digit millisecond writes, and enterprise-grade security.
   humanURL: https://aws.amazon.com/memorydb/
   baseURL: https://memory-db.us-east-1.amazonaws.com
   tags:
@@ -35,6 +35,30 @@ apis:
     url: https://aws.amazon.com/memorydb/pricing/
   - type: FAQ
     url: https://aws.amazon.com/memorydb/faqs/
+  - type: NaftikoCapability
+    url: capabilities/amazon-memorydb-acls.yaml
+  - type: NaftikoCapability
+    url: capabilities/amazon-memorydb-clusters.yaml
+  - type: NaftikoCapability
+    url: capabilities/amazon-memorydb-engineversions.yaml
+  - type: NaftikoCapability
+    url: capabilities/amazon-memorydb-events.yaml
+  - type: NaftikoCapability
+    url: capabilities/amazon-memorydb-nodetypes.yaml
+  - type: NaftikoCapability
+    url: capabilities/amazon-memorydb-parametergroups.yaml
+  - type: NaftikoCapability
+    url: capabilities/amazon-memorydb-reservednodes.yaml
+  - type: NaftikoCapability
+    url: capabilities/amazon-memorydb-shards.yaml
+  - type: NaftikoCapability
+    url: capabilities/amazon-memorydb-snapshots.yaml
+  - type: NaftikoCapability
+    url: capabilities/amazon-memorydb-subnetgroups.yaml
+  - type: NaftikoCapability
+    url: capabilities/amazon-memorydb-tags.yaml
+  - type: NaftikoCapability
+    url: capabilities/amazon-memorydb-users.yaml
 common:
 - type: Portal
   url: https://aws.amazon.com/memorydb/
@@ -62,8 +86,6 @@ common:
   url: rules/amazon-memorydb-spectral-rules.yml
 - type: Vocabulary
   url: vocabulary/amazon-memorydb-vocabulary.yaml
-- type: NaftikoCapability
-  url: capabilities/amazon-memorydb-media-workflow.yaml
 - type: Features
   data:
   - name: Redis Compatibility
@@ -105,14 +127,14 @@ common:
 - type: Integrations
   url: https://aws.amazon.com/partners/
 integrations:
-  - name: Partner Programs
-  - name: Resources
-  - name: Success Stories
-  - name: Work with an AWS Partner
-  - name: AWS Marketplace
-  - name: AWS Partner Central
-  - name: Partner Paths
-  - name: co-sell with AWS
+- name: Partner Programs
+- name: Resources
+- name: Success Stories
+- name: Work with an AWS Partner
+- name: AWS Marketplace
+- name: AWS Partner Central
+- name: Partner Paths
+- name: co-sell with AWS
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com

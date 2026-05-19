@@ -1,0 +1,167 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Amazon MemoryDB — Clusters
+  description: 'Amazon MemoryDB — Clusters. 4 operations. Lead operation: Amazon MemoryDB DeleteCluster. Self-contained Naftiko
+    capability covering one Amazon Memorydb business surface.'
+  tags:
+  - Amazon Memorydb
+  - Clusters
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    AMAZON_MEMORYDB_API_KEY: AMAZON_MEMORYDB_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: amazon-memorydb-clusters
+    baseUri: https://memory-db.us-east-1.amazonaws.com
+    description: Amazon MemoryDB — Clusters business capability. Self-contained, no shared references.
+    resources:
+    - name: clusters
+      path: /clusters
+      operations:
+      - name: deletecluster
+        method: DELETE
+        description: Amazon MemoryDB DeleteCluster
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: describeclusters
+        method: GET
+        description: Amazon MemoryDB DescribeClusters
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: createcluster
+        method: POST
+        description: Amazon MemoryDB CreateCluster
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: updatecluster
+        method: PUT
+        description: Amazon MemoryDB UpdateCluster
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: apikey
+      key: Authorization
+      value: '{{env.AMAZON_MEMORYDB_API_KEY}}'
+      placement: header
+  exposes:
+  - type: rest
+    namespace: amazon-memorydb-clusters-rest
+    port: 8080
+    description: REST adapter for Amazon MemoryDB — Clusters. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/clusters
+      name: clusters
+      description: REST surface for clusters.
+      operations:
+      - method: DELETE
+        name: deletecluster
+        description: Amazon MemoryDB DeleteCluster
+        call: amazon-memorydb-clusters.deletecluster
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: GET
+        name: describeclusters
+        description: Amazon MemoryDB DescribeClusters
+        call: amazon-memorydb-clusters.describeclusters
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: createcluster
+        description: Amazon MemoryDB CreateCluster
+        call: amazon-memorydb-clusters.createcluster
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PUT
+        name: updatecluster
+        description: Amazon MemoryDB UpdateCluster
+        call: amazon-memorydb-clusters.updatecluster
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: amazon-memorydb-clusters-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Amazon MemoryDB — Clusters. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: amazon-memorydb-deletecluster
+      description: Amazon MemoryDB DeleteCluster
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: amazon-memorydb-clusters.deletecluster
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-memorydb-describeclusters
+      description: Amazon MemoryDB DescribeClusters
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: amazon-memorydb-clusters.describeclusters
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-memorydb-createcluster
+      description: Amazon MemoryDB CreateCluster
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-memorydb-clusters.createcluster
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-memorydb-updatecluster
+      description: Amazon MemoryDB UpdateCluster
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: amazon-memorydb-clusters.updatecluster
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

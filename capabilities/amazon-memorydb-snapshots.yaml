@@ -1,0 +1,174 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Amazon MemoryDB — Snapshots
+  description: 'Amazon MemoryDB — Snapshots. 4 operations. Lead operation: Amazon MemoryDB DeleteSnapshot. Self-contained
+    Naftiko capability covering one Amazon Memorydb business surface.'
+  tags:
+  - Amazon Memorydb
+  - Snapshots
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    AMAZON_MEMORYDB_API_KEY: AMAZON_MEMORYDB_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: amazon-memorydb-snapshots
+    baseUri: https://memory-db.us-east-1.amazonaws.com
+    description: Amazon MemoryDB — Snapshots business capability. Self-contained, no shared references.
+    resources:
+    - name: snapshots
+      path: /snapshots
+      operations:
+      - name: deletesnapshot
+        method: DELETE
+        description: Amazon MemoryDB DeleteSnapshot
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: describesnapshots
+        method: GET
+        description: Amazon MemoryDB DescribeSnapshots
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: createsnapshot
+        method: POST
+        description: Amazon MemoryDB CreateSnapshot
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: snapshots-copysnapshot
+      path: /snapshots/copysnapshot
+      operations:
+      - name: copysnapshot
+        method: POST
+        description: Amazon MemoryDB CopySnapshot
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: apikey
+      key: Authorization
+      value: '{{env.AMAZON_MEMORYDB_API_KEY}}'
+      placement: header
+  exposes:
+  - type: rest
+    namespace: amazon-memorydb-snapshots-rest
+    port: 8080
+    description: REST adapter for Amazon MemoryDB — Snapshots. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/snapshots
+      name: snapshots
+      description: REST surface for snapshots.
+      operations:
+      - method: DELETE
+        name: deletesnapshot
+        description: Amazon MemoryDB DeleteSnapshot
+        call: amazon-memorydb-snapshots.deletesnapshot
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: GET
+        name: describesnapshots
+        description: Amazon MemoryDB DescribeSnapshots
+        call: amazon-memorydb-snapshots.describesnapshots
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: createsnapshot
+        description: Amazon MemoryDB CreateSnapshot
+        call: amazon-memorydb-snapshots.createsnapshot
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/snapshots/copysnapshot
+      name: snapshots-copysnapshot
+      description: REST surface for snapshots-copysnapshot.
+      operations:
+      - method: POST
+        name: copysnapshot
+        description: Amazon MemoryDB CopySnapshot
+        call: amazon-memorydb-snapshots.copysnapshot
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: amazon-memorydb-snapshots-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Amazon MemoryDB — Snapshots. One tool per consumed operation, routed inline through this
+      capability's consumes block.
+    tools:
+    - name: amazon-memorydb-deletesnapshot
+      description: Amazon MemoryDB DeleteSnapshot
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: amazon-memorydb-snapshots.deletesnapshot
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-memorydb-describesnapshots
+      description: Amazon MemoryDB DescribeSnapshots
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: amazon-memorydb-snapshots.describesnapshots
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-memorydb-createsnapshot
+      description: Amazon MemoryDB CreateSnapshot
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-memorydb-snapshots.createsnapshot
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-memorydb-copysnapshot
+      description: Amazon MemoryDB CopySnapshot
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-memorydb-snapshots.copysnapshot
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
