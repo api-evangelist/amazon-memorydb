@@ -4,7 +4,7 @@ description: >-
   Amazon MemoryDB for Redis is a durable, in-memory database service that delivers ultra-fast performance. It is
   Redis-compatible and provides microsecond reads, low single-digit millisecond writes, and enterprise-grade security.
 type: Index
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
   - AWS
   - Broadcasting
