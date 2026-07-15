@@ -39,6 +39,8 @@ apis:
       - type: FAQ
         url: https://aws.amazon.com/memorydb/faqs/
 common:
+  - type: AgenticAccess
+    url: agentic-access/amazon-memorydb-agentic-access.yml
   - type: TrustCenter
     url: security/amazon-memorydb-trust-center.yml
   - type: VulnerabilityDisclosure
