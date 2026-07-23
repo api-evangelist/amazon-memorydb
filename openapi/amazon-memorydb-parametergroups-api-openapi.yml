@@ -1,0 +1,168 @@
+openapi: 3.0.3
+info:
+  description: Amazon MemoryDB for Redis is a durable, in-memory database service that delivers ultra-fast performance compatible with Redis and Memcached.
+  title: Amazon MemoryDB ACLs ParameterGroups API
+  version: '2021-01-01'
+  x-generated-from: documentation
+  x-last-validated: '2026-04-19'
+servers:
+- description: Amazon MemoryDB API endpoint (region-specific)
+  url: https://memory-db.us-east-1.amazonaws.com
+security:
+- awsSigV4: []
+tags:
+- name: ParameterGroups
+paths:
+  /parametergroups:
+    delete:
+      description: Deletes the specified parameter group.
+      operationId: DeleteParameterGroup
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ParameterGroup'
+              examples:
+                DeleteParameterGroup200Example:
+                  summary: Default DeleteParameterGroup 200 response
+                  x-microcks-default: true
+                  value:
+                    ARN: arn:aws:service:us-east-1:123456789012:resource/example
+                    Description: Example description
+                    Family: example-value
+                    Name: example-resource
+          description: Success
+        '400':
+          description: Bad request
+        '500':
+          description: Internal server error
+      summary: Amazon MemoryDB DeleteParameterGroup
+      tags:
+      - ParameterGroups
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+    get:
+      description: Returns a list of parameter group descriptions.
+      operationId: DescribeParameterGroups
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ParameterGroup'
+              examples:
+                DescribeParameterGroups200Example:
+                  summary: Default DescribeParameterGroups 200 response
+                  x-microcks-default: true
+                  value:
+                    ARN: arn:aws:service:us-east-1:123456789012:resource/example
+                    Description: Example description
+                    Family: example-value
+                    Name: example-resource
+          description: Success
+        '400':
+          description: Bad request
+        '500':
+          description: Internal server error
+      summary: Amazon MemoryDB DescribeParameterGroups
+      tags:
+      - ParameterGroups
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+    post:
+      description: Creates a new MemoryDB parameter group.
+      operationId: CreateParameterGroup
+      requestBody:
+        content:
+          application/x-amz-json-1.1:
+            schema:
+              type: object
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ParameterGroup'
+              examples:
+                CreateParameterGroup200Example:
+                  summary: Default CreateParameterGroup 200 response
+                  x-microcks-default: true
+                  value:
+                    ARN: arn:aws:service:us-east-1:123456789012:resource/example
+                    Description: Example description
+                    Family: example-value
+                    Name: example-resource
+          description: Success
+        '400':
+          description: Bad request
+        '500':
+          description: Internal server error
+      summary: Amazon MemoryDB CreateParameterGroup
+      tags:
+      - ParameterGroups
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+    put:
+      description: Updates the parameters of a parameter group.
+      operationId: UpdateParameterGroup
+      requestBody:
+        content:
+          application/x-amz-json-1.1:
+            schema:
+              type: object
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ParameterGroup'
+              examples:
+                UpdateParameterGroup200Example:
+                  summary: Default UpdateParameterGroup 200 response
+                  x-microcks-default: true
+                  value:
+                    ARN: arn:aws:service:us-east-1:123456789012:resource/example
+                    Description: Example description
+                    Family: example-value
+                    Name: example-resource
+          description: Success
+        '400':
+          description: Bad request
+        '500':
+          description: Internal server error
+      summary: Amazon MemoryDB UpdateParameterGroup
+      tags:
+      - ParameterGroups
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+components:
+  schemas:
+    ParameterGroup:
+      description: Represents the output of a CreateParameterGroup operation.
+      properties:
+        ARN:
+          description: The Amazon Resource Name (ARN) of the parameter group.
+          type: string
+        Description:
+          description: A description of the parameter group.
+          type: string
+        Family:
+          description: The name of the parameter group family.
+          type: string
+        Name:
+          description: The name of the parameter group.
+          type: string
+      type: object
+  securitySchemes:
+    awsSigV4:
+      description: AWS Signature Version 4
+      in: header
+      name: Authorization
+      type: apiKey

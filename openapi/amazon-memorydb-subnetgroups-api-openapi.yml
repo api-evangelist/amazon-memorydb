@@ -1,0 +1,168 @@
+openapi: 3.0.3
+info:
+  description: Amazon MemoryDB for Redis is a durable, in-memory database service that delivers ultra-fast performance compatible with Redis and Memcached.
+  title: Amazon MemoryDB ACLs SubnetGroups API
+  version: '2021-01-01'
+  x-generated-from: documentation
+  x-last-validated: '2026-04-19'
+servers:
+- description: Amazon MemoryDB API endpoint (region-specific)
+  url: https://memory-db.us-east-1.amazonaws.com
+security:
+- awsSigV4: []
+tags:
+- name: SubnetGroups
+paths:
+  /subnetgroups:
+    delete:
+      description: Deletes a subnet group.
+      operationId: DeleteSubnetGroup
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SubnetGroup'
+              examples:
+                DeleteSubnetGroup200Example:
+                  summary: Default DeleteSubnetGroup 200 response
+                  x-microcks-default: true
+                  value:
+                    ARN: arn:aws:service:us-east-1:123456789012:resource/example
+                    Description: Example description
+                    Name: example-resource
+                    VpcId: id-abc123
+          description: Success
+        '400':
+          description: Bad request
+        '500':
+          description: Internal server error
+      summary: Amazon MemoryDB DeleteSubnetGroup
+      tags:
+      - SubnetGroups
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+    get:
+      description: Returns a list of subnet group descriptions.
+      operationId: DescribeSubnetGroups
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SubnetGroup'
+              examples:
+                DescribeSubnetGroups200Example:
+                  summary: Default DescribeSubnetGroups 200 response
+                  x-microcks-default: true
+                  value:
+                    ARN: arn:aws:service:us-east-1:123456789012:resource/example
+                    Description: Example description
+                    Name: example-resource
+                    VpcId: id-abc123
+          description: Success
+        '400':
+          description: Bad request
+        '500':
+          description: Internal server error
+      summary: Amazon MemoryDB DescribeSubnetGroups
+      tags:
+      - SubnetGroups
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+    post:
+      description: Creates a subnet group.
+      operationId: CreateSubnetGroup
+      requestBody:
+        content:
+          application/x-amz-json-1.1:
+            schema:
+              type: object
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SubnetGroup'
+              examples:
+                CreateSubnetGroup200Example:
+                  summary: Default CreateSubnetGroup 200 response
+                  x-microcks-default: true
+                  value:
+                    ARN: arn:aws:service:us-east-1:123456789012:resource/example
+                    Description: Example description
+                    Name: example-resource
+                    VpcId: id-abc123
+          description: Success
+        '400':
+          description: Bad request
+        '500':
+          description: Internal server error
+      summary: Amazon MemoryDB CreateSubnetGroup
+      tags:
+      - SubnetGroups
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+    put:
+      description: Updates a subnet group.
+      operationId: UpdateSubnetGroup
+      requestBody:
+        content:
+          application/x-amz-json-1.1:
+            schema:
+              type: object
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SubnetGroup'
+              examples:
+                UpdateSubnetGroup200Example:
+                  summary: Default UpdateSubnetGroup 200 response
+                  x-microcks-default: true
+                  value:
+                    ARN: arn:aws:service:us-east-1:123456789012:resource/example
+                    Description: Example description
+                    Name: example-resource
+                    VpcId: id-abc123
+          description: Success
+        '400':
+          description: Bad request
+        '500':
+          description: Internal server error
+      summary: Amazon MemoryDB UpdateSubnetGroup
+      tags:
+      - SubnetGroups
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+components:
+  schemas:
+    SubnetGroup:
+      description: 'Represents the output of one of the following operations: CreateSubnetGroup / DescribeSubnetGroups.'
+      properties:
+        ARN:
+          description: The ARN of the subnet group.
+          type: string
+        Description:
+          description: A description of the subnet group.
+          type: string
+        Name:
+          description: The name of the subnet group.
+          type: string
+        VpcId:
+          description: The Amazon Virtual Private Cloud identifier (VPC ID) of the subnet group.
+          type: string
+      type: object
+  securitySchemes:
+    awsSigV4:
+      description: AWS Signature Version 4
+      in: header
+      name: Authorization
+      type: apiKey

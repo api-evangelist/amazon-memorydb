@@ -1,0 +1,170 @@
+openapi: 3.0.3
+info:
+  description: Amazon MemoryDB for Redis is a durable, in-memory database service that delivers ultra-fast performance compatible with Redis and Memcached.
+  title: Amazon MemoryDB ACLs API
+  version: '2021-01-01'
+  x-generated-from: documentation
+  x-last-validated: '2026-04-19'
+servers:
+- description: Amazon MemoryDB API endpoint (region-specific)
+  url: https://memory-db.us-east-1.amazonaws.com
+security:
+- awsSigV4: []
+tags:
+- name: ACLs
+paths:
+  /acls:
+    delete:
+      description: Deletes an Access Control List.
+      operationId: DeleteACL
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ACL'
+              examples:
+                DeleteACL200Example:
+                  summary: Default DeleteACL 200 response
+                  x-microcks-default: true
+                  value:
+                    ARN: arn:aws:service:us-east-1:123456789012:resource/example
+                    Name: example-resource
+                    Status: ACTIVE
+                    UserNames: []
+          description: Success
+        '400':
+          description: Bad request
+        '500':
+          description: Internal server error
+      summary: Amazon MemoryDB DeleteACL
+      tags:
+      - ACLs
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+    get:
+      description: Returns a list of ACLs.
+      operationId: DescribeACLs
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ACL'
+              examples:
+                DescribeACLs200Example:
+                  summary: Default DescribeACLs 200 response
+                  x-microcks-default: true
+                  value:
+                    ARN: arn:aws:service:us-east-1:123456789012:resource/example
+                    Name: example-resource
+                    Status: ACTIVE
+                    UserNames: []
+          description: Success
+        '400':
+          description: Bad request
+        '500':
+          description: Internal server error
+      summary: Amazon MemoryDB DescribeACLs
+      tags:
+      - ACLs
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+    post:
+      description: Creates an Access Control List.
+      operationId: CreateACL
+      requestBody:
+        content:
+          application/x-amz-json-1.1:
+            schema:
+              type: object
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ACL'
+              examples:
+                CreateACL200Example:
+                  summary: Default CreateACL 200 response
+                  x-microcks-default: true
+                  value:
+                    ARN: arn:aws:service:us-east-1:123456789012:resource/example
+                    Name: example-resource
+                    Status: ACTIVE
+                    UserNames: []
+          description: Success
+        '400':
+          description: Bad request
+        '500':
+          description: Internal server error
+      summary: Amazon MemoryDB CreateACL
+      tags:
+      - ACLs
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+    put:
+      description: Changes the list of users that belong to the Access Control List.
+      operationId: UpdateACL
+      requestBody:
+        content:
+          application/x-amz-json-1.1:
+            schema:
+              type: object
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ACL'
+              examples:
+                UpdateACL200Example:
+                  summary: Default UpdateACL 200 response
+                  x-microcks-default: true
+                  value:
+                    ARN: arn:aws:service:us-east-1:123456789012:resource/example
+                    Name: example-resource
+                    Status: ACTIVE
+                    UserNames: []
+          description: Success
+        '400':
+          description: Bad request
+        '500':
+          description: Internal server error
+      summary: Amazon MemoryDB UpdateACL
+      tags:
+      - ACLs
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+components:
+  schemas:
+    ACL:
+      description: An Access Control List.
+      properties:
+        ARN:
+          description: The Amazon Resource Name (ARN) of the ACL.
+          type: string
+        Name:
+          description: The name of the Access Control List.
+          type: string
+        Status:
+          description: Indicates the current status of the ACL.
+          type: string
+        UserNames:
+          description: The list of user names that belong to the ACL.
+          items:
+            type: string
+          type: array
+      type: object
+  securitySchemes:
+    awsSigV4:
+      description: AWS Signature Version 4
+      in: header
+      name: Authorization
+      type: apiKey

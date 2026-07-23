@@ -1,0 +1,170 @@
+openapi: 3.0.3
+info:
+  description: Amazon MemoryDB for Redis is a durable, in-memory database service that delivers ultra-fast performance compatible with Redis and Memcached.
+  title: Amazon MemoryDB ACLs Users API
+  version: '2021-01-01'
+  x-generated-from: documentation
+  x-last-validated: '2026-04-19'
+servers:
+- description: Amazon MemoryDB API endpoint (region-specific)
+  url: https://memory-db.us-east-1.amazonaws.com
+security:
+- awsSigV4: []
+tags:
+- name: Users
+paths:
+  /users:
+    delete:
+      description: Deletes a user.
+      operationId: DeleteUser
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+              examples:
+                DeleteUser200Example:
+                  summary: Default DeleteUser 200 response
+                  x-microcks-default: true
+                  value:
+                    ACLNames: []
+                    ARN: arn:aws:service:us-east-1:123456789012:resource/example
+                    Name: example-resource
+                    Status: ACTIVE
+          description: Success
+        '400':
+          description: Bad request
+        '500':
+          description: Internal server error
+      summary: Amazon MemoryDB DeleteUser
+      tags:
+      - Users
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+    get:
+      description: Returns a list of users.
+      operationId: DescribeUsers
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+              examples:
+                DescribeUsers200Example:
+                  summary: Default DescribeUsers 200 response
+                  x-microcks-default: true
+                  value:
+                    ACLNames: []
+                    ARN: arn:aws:service:us-east-1:123456789012:resource/example
+                    Name: example-resource
+                    Status: ACTIVE
+          description: Success
+        '400':
+          description: Bad request
+        '500':
+          description: Internal server error
+      summary: Amazon MemoryDB DescribeUsers
+      tags:
+      - Users
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+    post:
+      description: Creates a MemoryDB user.
+      operationId: CreateUser
+      requestBody:
+        content:
+          application/x-amz-json-1.1:
+            schema:
+              type: object
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+              examples:
+                CreateUser200Example:
+                  summary: Default CreateUser 200 response
+                  x-microcks-default: true
+                  value:
+                    ACLNames: []
+                    ARN: arn:aws:service:us-east-1:123456789012:resource/example
+                    Name: example-resource
+                    Status: ACTIVE
+          description: Success
+        '400':
+          description: Bad request
+        '500':
+          description: Internal server error
+      summary: Amazon MemoryDB CreateUser
+      tags:
+      - Users
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+    put:
+      description: Changes user password(s) and/or access string.
+      operationId: UpdateUser
+      requestBody:
+        content:
+          application/x-amz-json-1.1:
+            schema:
+              type: object
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+              examples:
+                UpdateUser200Example:
+                  summary: Default UpdateUser 200 response
+                  x-microcks-default: true
+                  value:
+                    ACLNames: []
+                    ARN: arn:aws:service:us-east-1:123456789012:resource/example
+                    Name: example-resource
+                    Status: ACTIVE
+          description: Success
+        '400':
+          description: Bad request
+        '500':
+          description: Internal server error
+      summary: Amazon MemoryDB UpdateUser
+      tags:
+      - Users
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+components:
+  schemas:
+    User:
+      description: Represents a MemoryDB user.
+      properties:
+        ACLNames:
+          description: The names of the Access Control Lists to which the user belongs.
+          items:
+            type: string
+          type: array
+        ARN:
+          description: The Amazon Resource Name (ARN) of the user.
+          type: string
+        Name:
+          description: The name of the user.
+          type: string
+        Status:
+          description: Indicates the user status.
+          type: string
+      type: object
+  securitySchemes:
+    awsSigV4:
+      description: AWS Signature Version 4
+      in: header
+      name: Authorization
+      type: apiKey

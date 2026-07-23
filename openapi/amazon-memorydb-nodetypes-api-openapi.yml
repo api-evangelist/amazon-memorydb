@@ -1,0 +1,49 @@
+openapi: 3.0.3
+info:
+  description: Amazon MemoryDB for Redis is a durable, in-memory database service that delivers ultra-fast performance compatible with Redis and Memcached.
+  title: Amazon MemoryDB ACLs NodeTypes API
+  version: '2021-01-01'
+  x-generated-from: documentation
+  x-last-validated: '2026-04-19'
+servers:
+- description: Amazon MemoryDB API endpoint (region-specific)
+  url: https://memory-db.us-east-1.amazonaws.com
+security:
+- awsSigV4: []
+tags:
+- name: NodeTypes
+paths:
+  /nodetypes:
+    get:
+      description: Lists all available node types that you can scale to from your cluster.
+      operationId: ListAllowedNodeTypeUpdates
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+              examples:
+                ListAllowedNodeTypeUpdates200Example:
+                  summary: Default ListAllowedNodeTypeUpdates 200 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+          description: Success
+        '400':
+          description: Bad request
+        '500':
+          description: Internal server error
+      summary: Amazon MemoryDB ListAllowedNodeTypeUpdates
+      tags:
+      - NodeTypes
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+components:
+  securitySchemes:
+    awsSigV4:
+      description: AWS Signature Version 4
+      in: header
+      name: Authorization
+      type: apiKey

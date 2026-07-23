@@ -1,0 +1,176 @@
+openapi: 3.0.3
+info:
+  description: Amazon MemoryDB for Redis is a durable, in-memory database service that delivers ultra-fast performance compatible with Redis and Memcached.
+  title: Amazon MemoryDB ACLs Snapshots API
+  version: '2021-01-01'
+  x-generated-from: documentation
+  x-last-validated: '2026-04-19'
+servers:
+- description: Amazon MemoryDB API endpoint (region-specific)
+  url: https://memory-db.us-east-1.amazonaws.com
+security:
+- awsSigV4: []
+tags:
+- name: Snapshots
+paths:
+  /snapshots:
+    delete:
+      description: Deletes an existing snapshot.
+      operationId: DeleteSnapshot
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Snapshot'
+              examples:
+                DeleteSnapshot200Example:
+                  summary: Default DeleteSnapshot 200 response
+                  x-microcks-default: true
+                  value:
+                    ARN: arn:aws:service:us-east-1:123456789012:resource/example
+                    ClusterConfiguration: {}
+                    KmsKeyId: id-abc123
+                    Name: example-resource
+                    Status: ACTIVE
+          description: Success
+        '400':
+          description: Bad request
+        '500':
+          description: Internal server error
+      summary: Amazon MemoryDB DeleteSnapshot
+      tags:
+      - Snapshots
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+    get:
+      description: Returns information about cluster snapshots.
+      operationId: DescribeSnapshots
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Snapshot'
+              examples:
+                DescribeSnapshots200Example:
+                  summary: Default DescribeSnapshots 200 response
+                  x-microcks-default: true
+                  value:
+                    ARN: arn:aws:service:us-east-1:123456789012:resource/example
+                    ClusterConfiguration: {}
+                    KmsKeyId: id-abc123
+                    Name: example-resource
+                    Status: ACTIVE
+          description: Success
+        '400':
+          description: Bad request
+        '500':
+          description: Internal server error
+      summary: Amazon MemoryDB DescribeSnapshots
+      tags:
+      - Snapshots
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+    post:
+      description: Creates a copy of an entire cluster.
+      operationId: CreateSnapshot
+      requestBody:
+        content:
+          application/x-amz-json-1.1:
+            schema:
+              type: object
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Snapshot'
+              examples:
+                CreateSnapshot200Example:
+                  summary: Default CreateSnapshot 200 response
+                  x-microcks-default: true
+                  value:
+                    ARN: arn:aws:service:us-east-1:123456789012:resource/example
+                    ClusterConfiguration: {}
+                    KmsKeyId: id-abc123
+                    Name: example-resource
+                    Status: ACTIVE
+          description: Success
+        '400':
+          description: Bad request
+        '500':
+          description: Internal server error
+      summary: Amazon MemoryDB CreateSnapshot
+      tags:
+      - Snapshots
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /snapshots/copysnapshot:
+    post:
+      description: Makes a copy of an existing snapshot.
+      operationId: CopySnapshot
+      requestBody:
+        content:
+          application/x-amz-json-1.1:
+            schema:
+              type: object
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Snapshot'
+              examples:
+                CopySnapshot200Example:
+                  summary: Default CopySnapshot 200 response
+                  x-microcks-default: true
+                  value:
+                    ARN: arn:aws:service:us-east-1:123456789012:resource/example
+                    ClusterConfiguration: {}
+                    KmsKeyId: id-abc123
+                    Name: example-resource
+                    Status: ACTIVE
+          description: Success
+        '400':
+          description: Bad request
+        '500':
+          description: Internal server error
+      summary: Amazon MemoryDB CopySnapshot
+      tags:
+      - Snapshots
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+components:
+  schemas:
+    Snapshot:
+      description: Represents a copy of an entire cluster.
+      properties:
+        ARN:
+          description: The ARN of the snapshot.
+          type: string
+        ClusterConfiguration:
+          description: The configuration of the cluster from which the snapshot was taken.
+          type: object
+        KmsKeyId:
+          description: The ID of the KMS key used to encrypt the snapshot.
+          type: string
+        Name:
+          description: The name of the snapshot.
+          type: string
+        Status:
+          description: The status of the snapshot.
+          type: string
+      type: object
+  securitySchemes:
+    awsSigV4:
+      description: AWS Signature Version 4
+      in: header
+      name: Authorization
+      type: apiKey
