@@ -4,7 +4,20 @@ description: >-
   Amazon MemoryDB for Redis is a durable, in-memory database service that delivers ultra-fast performance. It is
   Redis-compatible and provides microsecond reads, low single-digit millisecond writes, and enterprise-grade security.
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/amazon-memorydb.png
 tags:
   - AWS
   - Broadcasting
@@ -15,30 +28,225 @@ created: '2026-03-16'
 modified: '2026-05-19'
 specificationVersion: '0.19'
 apis:
-  - aid: amazon-memorydb:memorydb-api
-    name: Amazon MemoryDB API
-    description: >-
-      Amazon MemoryDB for Redis is a durable, in-memory database service that delivers ultra-fast performance. It is
-      Redis-compatible and provides microsecond reads, low single-digit millisecond writes, and enterprise-grade
-      security.
-    humanURL: https://aws.amazon.com/memorydb/
-    baseURL: https://memory-db.us-east-1.amazonaws.com
-    tags:
-      - Broadcasting
-      - Media Processing
-      - Media
-    properties:
-      - type: Documentation
-        url: https://docs.aws.amazon.com/memorydb/
-      - type: OpenAPI
-        url: openapi/amazon-memorydb-openapi-original.yml
-      - type: GettingStarted
-        url: https://aws.amazon.com/memorydb/getting-started/
-      - type: Pricing
-        url: https://aws.amazon.com/memorydb/pricing/
-      - type: FAQ
-        url: https://aws.amazon.com/memorydb/faqs/
+- aid: amazon-memorydb:amazon-memorydb-acls-api
+  name: Amazon MemoryDB ACLs API
+  description: The ACLs API from Amazon MemoryDB — 1 operation(s) for acls.
+  humanURL: https://aws.amazon.com/memorydb/
+  baseURL: https://memory-db.us-east-1.amazonaws.com
+  tags:
+  - ACLs
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-memorydb-acls-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/memorydb/
+  - type: GettingStarted
+    url: https://aws.amazon.com/memorydb/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/memorydb/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/memorydb/faqs/
+- aid: amazon-memorydb:amazon-memorydb-clusters-api
+  name: Amazon MemoryDB Clusters API
+  description: The Clusters API from Amazon MemoryDB — 1 operation(s) for clusters.
+  humanURL: https://aws.amazon.com/memorydb/
+  baseURL: https://memory-db.us-east-1.amazonaws.com
+  tags:
+  - Clusters
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-memorydb-clusters-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/memorydb/
+  - type: GettingStarted
+    url: https://aws.amazon.com/memorydb/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/memorydb/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/memorydb/faqs/
+- aid: amazon-memorydb:amazon-memorydb-engineversions-api
+  name: Amazon MemoryDB EngineVersions API
+  description: The EngineVersions API from Amazon MemoryDB — 1 operation(s) for engineversions.
+  humanURL: https://aws.amazon.com/memorydb/
+  baseURL: https://memory-db.us-east-1.amazonaws.com
+  tags:
+  - EngineVersions
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-memorydb-engineversions-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/memorydb/
+  - type: GettingStarted
+    url: https://aws.amazon.com/memorydb/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/memorydb/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/memorydb/faqs/
+- aid: amazon-memorydb:amazon-memorydb-events-api
+  name: Amazon MemoryDB Events API
+  description: The Events API from Amazon MemoryDB — 1 operation(s) for events.
+  humanURL: https://aws.amazon.com/memorydb/
+  baseURL: https://memory-db.us-east-1.amazonaws.com
+  tags:
+  - Events
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-memorydb-events-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/memorydb/
+  - type: GettingStarted
+    url: https://aws.amazon.com/memorydb/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/memorydb/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/memorydb/faqs/
+- aid: amazon-memorydb:amazon-memorydb-nodetypes-api
+  name: Amazon MemoryDB NodeTypes API
+  description: The NodeTypes API from Amazon MemoryDB — 1 operation(s) for nodetypes.
+  humanURL: https://aws.amazon.com/memorydb/
+  baseURL: https://memory-db.us-east-1.amazonaws.com
+  tags:
+  - NodeTypes
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-memorydb-nodetypes-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/memorydb/
+  - type: GettingStarted
+    url: https://aws.amazon.com/memorydb/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/memorydb/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/memorydb/faqs/
+- aid: amazon-memorydb:amazon-memorydb-parametergroups-api
+  name: Amazon MemoryDB ParameterGroups API
+  description: The ParameterGroups API from Amazon MemoryDB — 1 operation(s) for parametergroups.
+  humanURL: https://aws.amazon.com/memorydb/
+  baseURL: https://memory-db.us-east-1.amazonaws.com
+  tags:
+  - ParameterGroups
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-memorydb-parametergroups-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/memorydb/
+  - type: GettingStarted
+    url: https://aws.amazon.com/memorydb/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/memorydb/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/memorydb/faqs/
+- aid: amazon-memorydb:amazon-memorydb-reservednodes-api
+  name: Amazon MemoryDB ReservedNodes API
+  description: The ReservedNodes API from Amazon MemoryDB — 2 operation(s) for reservednodes.
+  humanURL: https://aws.amazon.com/memorydb/
+  baseURL: https://memory-db.us-east-1.amazonaws.com
+  tags:
+  - ReservedNodes
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-memorydb-reservednodes-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/memorydb/
+  - type: GettingStarted
+    url: https://aws.amazon.com/memorydb/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/memorydb/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/memorydb/faqs/
+- aid: amazon-memorydb:amazon-memorydb-shards-api
+  name: Amazon MemoryDB Shards API
+  description: The Shards API from Amazon MemoryDB — 1 operation(s) for shards.
+  humanURL: https://aws.amazon.com/memorydb/
+  baseURL: https://memory-db.us-east-1.amazonaws.com
+  tags:
+  - Shards
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-memorydb-shards-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/memorydb/
+  - type: GettingStarted
+    url: https://aws.amazon.com/memorydb/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/memorydb/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/memorydb/faqs/
+- aid: amazon-memorydb:amazon-memorydb-snapshots-api
+  name: Amazon MemoryDB Snapshots API
+  description: The Snapshots API from Amazon MemoryDB — 2 operation(s) for snapshots.
+  humanURL: https://aws.amazon.com/memorydb/
+  baseURL: https://memory-db.us-east-1.amazonaws.com
+  tags:
+  - Snapshots
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-memorydb-snapshots-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/memorydb/
+  - type: GettingStarted
+    url: https://aws.amazon.com/memorydb/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/memorydb/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/memorydb/faqs/
+- aid: amazon-memorydb:amazon-memorydb-subnetgroups-api
+  name: Amazon MemoryDB SubnetGroups API
+  description: The SubnetGroups API from Amazon MemoryDB — 1 operation(s) for subnetgroups.
+  humanURL: https://aws.amazon.com/memorydb/
+  baseURL: https://memory-db.us-east-1.amazonaws.com
+  tags:
+  - SubnetGroups
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-memorydb-subnetgroups-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/memorydb/
+  - type: GettingStarted
+    url: https://aws.amazon.com/memorydb/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/memorydb/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/memorydb/faqs/
+- aid: amazon-memorydb:amazon-memorydb-tags-api
+  name: Amazon MemoryDB Tags API
+  description: The Tags API from Amazon MemoryDB — 1 operation(s) for tags.
+  humanURL: https://aws.amazon.com/memorydb/
+  baseURL: https://memory-db.us-east-1.amazonaws.com
+  tags:
+  - Tags
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-memorydb-tags-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/memorydb/
+  - type: GettingStarted
+    url: https://aws.amazon.com/memorydb/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/memorydb/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/memorydb/faqs/
+- aid: amazon-memorydb:amazon-memorydb-users-api
+  name: Amazon MemoryDB Users API
+  description: The Users API from Amazon MemoryDB — 1 operation(s) for users.
+  humanURL: https://aws.amazon.com/memorydb/
+  baseURL: https://memory-db.us-east-1.amazonaws.com
+  tags:
+  - Users
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-memorydb-users-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/memorydb/
+  - type: GettingStarted
+    url: https://aws.amazon.com/memorydb/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/memorydb/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/memorydb/faqs/
 common:
+  - type: PostmanWorkspace
+    url: https://www.postman.com/kinlaneapi/amazon-memorydb/overview
   - type: AgenticAccess
     url: agentic-access/amazon-memorydb-agentic-access.yml
   - type: TrustCenter
