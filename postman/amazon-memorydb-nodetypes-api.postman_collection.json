@@ -1,0 +1,188 @@
+{
+  "info": {
+    "_postman_id": "2d9b88ac-1097-40e7-ab3e-7679844b3a03",
+    "name": "Amazon MemoryDB ACLs NodeTypes API",
+    "description": "Amazon MemoryDB for Redis is a durable, in-memory database service that delivers ultra-fast performance compatible with Redis and Memcached.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T00:49:31.000Z",
+    "updatedAt": "2026-07-28T00:49:31.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-2d9b88ac-1097-40e7-ab3e-7679844b3a03"
+  },
+  "item": [
+    {
+      "name": "nodetypes",
+      "item": [
+        {
+          "name": "Amazon MemoryDB ListAllowedNodeTypeUpdates",
+          "id": "8f0c41af-4289-4e3f-bab3-dd62a03adcb3",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/nodetypes",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "nodetypes"
+              ]
+            },
+            "description": "Lists all available node types that you can scale to from your cluster."
+          },
+          "response": [
+            {
+              "id": "73af6acb-2d03-49fd-9b18-ef435563cf60",
+              "name": "Success",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/nodetypes",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "nodetypes"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T00:49:31.000Z",
+              "updatedAt": "2026-07-28T00:49:31.000Z",
+              "uid": "35240-73af6acb-2d03-49fd-9b18-ef435563cf60"
+            },
+            {
+              "id": "e759e600-aacb-4539-9075-61559a2a5b9c",
+              "name": "Bad request",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/nodetypes",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "nodetypes"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T00:49:31.000Z",
+              "updatedAt": "2026-07-28T00:49:31.000Z",
+              "uid": "35240-e759e600-aacb-4539-9075-61559a2a5b9c"
+            },
+            {
+              "id": "d1aa2570-d059-4f3d-af72-795dae048776",
+              "name": "Internal server error",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/nodetypes",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "nodetypes"
+                  ]
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T00:49:31.000Z",
+              "updatedAt": "2026-07-28T00:49:31.000Z",
+              "uid": "35240-d1aa2570-d059-4f3d-af72-795dae048776"
+            }
+          ],
+          "createdAt": "2026-07-28T00:49:31.000Z",
+          "updatedAt": "2026-07-28T00:49:31.000Z",
+          "uid": "35240-8f0c41af-4289-4e3f-bab3-dd62a03adcb3"
+        }
+      ],
+      "id": "547c2128-36b2-42ec-858f-03e9a7fbe12e",
+      "createdAt": "2026-07-28T00:49:31.000Z",
+      "updatedAt": "2026-07-28T00:49:31.000Z",
+      "uid": "35240-547c2128-36b2-42ec-858f-03e9a7fbe12e"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://memory-db.us-east-1.amazonaws.com"
+    }
+  ]
+}

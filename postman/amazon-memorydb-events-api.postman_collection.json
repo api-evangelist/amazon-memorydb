@@ -1,0 +1,188 @@
+{
+  "info": {
+    "_postman_id": "5319b70e-98f6-456c-88ac-89d9445a88ed",
+    "name": "Amazon MemoryDB ACLs Events API",
+    "description": "Amazon MemoryDB for Redis is a durable, in-memory database service that delivers ultra-fast performance compatible with Redis and Memcached.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T00:49:30.000Z",
+    "updatedAt": "2026-07-28T00:49:30.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-5319b70e-98f6-456c-88ac-89d9445a88ed"
+  },
+  "item": [
+    {
+      "name": "events",
+      "item": [
+        {
+          "name": "Amazon MemoryDB DescribeEvents",
+          "id": "2b863dbe-aa1d-4696-be28-f05e04acde1b",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/events",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "events"
+              ]
+            },
+            "description": "Returns events related to clusters, security groups, and parameter groups."
+          },
+          "response": [
+            {
+              "id": "65f56393-b4dd-4abf-9981-118a14e762d9",
+              "name": "Success",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/events",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "events"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T00:49:30.000Z",
+              "updatedAt": "2026-07-28T00:49:30.000Z",
+              "uid": "35240-65f56393-b4dd-4abf-9981-118a14e762d9"
+            },
+            {
+              "id": "eb266580-87f1-4bbf-ad0d-59e3bf05c99a",
+              "name": "Bad request",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/events",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "events"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T00:49:30.000Z",
+              "updatedAt": "2026-07-28T00:49:30.000Z",
+              "uid": "35240-eb266580-87f1-4bbf-ad0d-59e3bf05c99a"
+            },
+            {
+              "id": "b11209dc-7217-42d0-bdd2-233494d34158",
+              "name": "Internal server error",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/events",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "events"
+                  ]
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T00:49:30.000Z",
+              "updatedAt": "2026-07-28T00:49:30.000Z",
+              "uid": "35240-b11209dc-7217-42d0-bdd2-233494d34158"
+            }
+          ],
+          "createdAt": "2026-07-28T00:49:30.000Z",
+          "updatedAt": "2026-07-28T00:49:30.000Z",
+          "uid": "35240-2b863dbe-aa1d-4696-be28-f05e04acde1b"
+        }
+      ],
+      "id": "649879ef-bfb8-4cf8-a3fe-be5c4f81ed52",
+      "createdAt": "2026-07-28T00:49:30.000Z",
+      "updatedAt": "2026-07-28T00:49:30.000Z",
+      "uid": "35240-649879ef-bfb8-4cf8-a3fe-be5c4f81ed52"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://memory-db.us-east-1.amazonaws.com"
+    }
+  ]
+}

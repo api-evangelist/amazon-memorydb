@@ -1,0 +1,669 @@
+{
+  "info": {
+    "_postman_id": "cbdd3dfb-796e-4e96-83e3-fe57dea213c7",
+    "name": "Amazon MemoryDB ACLs Clusters API",
+    "description": "Amazon MemoryDB for Redis is a durable, in-memory database service that delivers ultra-fast performance compatible with Redis and Memcached.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T00:49:28.000Z",
+    "updatedAt": "2026-07-28T00:49:28.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-cbdd3dfb-796e-4e96-83e3-fe57dea213c7"
+  },
+  "item": [
+    {
+      "name": "clusters",
+      "item": [
+        {
+          "name": "Amazon MemoryDB DeleteCluster",
+          "id": "5180ed0e-9499-4d7d-8563-d64c7e73a05a",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/clusters",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "clusters"
+              ]
+            },
+            "description": "Deletes a cluster."
+          },
+          "response": [
+            {
+              "id": "2ca51aee-ddfa-4874-b3cc-721ce336aacb",
+              "name": "Success",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/clusters",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "clusters"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"Clusters\": [\n    {\n      \"ARN\": \"<string>\",\n      \"AvailabilityMode\": \"MultiAZ\",\n      \"Description\": \"<string>\",\n      \"EngineVersion\": \"<string>\",\n      \"Name\": \"<string>\",\n      \"NodeType\": \"<string>\",\n      \"NumberOfShards\": \"<integer>\",\n      \"Status\": \"<string>\",\n      \"TLSEnabled\": \"<boolean>\"\n    },\n    {\n      \"ARN\": \"<string>\",\n      \"AvailabilityMode\": \"SingleAZ\",\n      \"Description\": \"<string>\",\n      \"EngineVersion\": \"<string>\",\n      \"Name\": \"<string>\",\n      \"NodeType\": \"<string>\",\n      \"NumberOfShards\": \"<integer>\",\n      \"Status\": \"<string>\",\n      \"TLSEnabled\": \"<boolean>\"\n    }\n  ],\n  \"NextToken\": \"<string>\"\n}",
+              "createdAt": "2026-07-28T00:49:29.000Z",
+              "updatedAt": "2026-07-28T00:49:29.000Z",
+              "uid": "35240-2ca51aee-ddfa-4874-b3cc-721ce336aacb"
+            },
+            {
+              "id": "fd07829f-9431-48e5-8f08-ce8b92cd9307",
+              "name": "Bad request",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/clusters",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "clusters"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T00:49:29.000Z",
+              "updatedAt": "2026-07-28T00:49:29.000Z",
+              "uid": "35240-fd07829f-9431-48e5-8f08-ce8b92cd9307"
+            },
+            {
+              "id": "405eca3e-e377-419f-808d-4fb80454d24e",
+              "name": "Internal server error",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/clusters",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "clusters"
+                  ]
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T00:49:29.000Z",
+              "updatedAt": "2026-07-28T00:49:29.000Z",
+              "uid": "35240-405eca3e-e377-419f-808d-4fb80454d24e"
+            }
+          ],
+          "createdAt": "2026-07-28T00:49:29.000Z",
+          "updatedAt": "2026-07-28T00:49:29.000Z",
+          "uid": "35240-5180ed0e-9499-4d7d-8563-d64c7e73a05a"
+        },
+        {
+          "name": "Amazon MemoryDB DescribeClusters",
+          "id": "dbe62844-06d0-487d-85ac-b806a1b910b9",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/clusters",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "clusters"
+              ]
+            },
+            "description": "Returns information about all provisioned clusters."
+          },
+          "response": [
+            {
+              "id": "b5b3e745-2f78-4ee7-992f-00ea85e0244b",
+              "name": "Success",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/clusters",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "clusters"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"Clusters\": [\n    {\n      \"ARN\": \"<string>\",\n      \"AvailabilityMode\": \"MultiAZ\",\n      \"Description\": \"<string>\",\n      \"EngineVersion\": \"<string>\",\n      \"Name\": \"<string>\",\n      \"NodeType\": \"<string>\",\n      \"NumberOfShards\": \"<integer>\",\n      \"Status\": \"<string>\",\n      \"TLSEnabled\": \"<boolean>\"\n    },\n    {\n      \"ARN\": \"<string>\",\n      \"AvailabilityMode\": \"SingleAZ\",\n      \"Description\": \"<string>\",\n      \"EngineVersion\": \"<string>\",\n      \"Name\": \"<string>\",\n      \"NodeType\": \"<string>\",\n      \"NumberOfShards\": \"<integer>\",\n      \"Status\": \"<string>\",\n      \"TLSEnabled\": \"<boolean>\"\n    }\n  ],\n  \"NextToken\": \"<string>\"\n}",
+              "createdAt": "2026-07-28T00:49:29.000Z",
+              "updatedAt": "2026-07-28T00:49:29.000Z",
+              "uid": "35240-b5b3e745-2f78-4ee7-992f-00ea85e0244b"
+            },
+            {
+              "id": "e663758a-741b-43ce-b96e-dcd84661e242",
+              "name": "Bad request",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/clusters",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "clusters"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T00:49:29.000Z",
+              "updatedAt": "2026-07-28T00:49:29.000Z",
+              "uid": "35240-e663758a-741b-43ce-b96e-dcd84661e242"
+            },
+            {
+              "id": "b2ac4918-3bbd-48b4-b144-3d4def8d8a66",
+              "name": "Internal server error",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/clusters",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "clusters"
+                  ]
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T00:49:29.000Z",
+              "updatedAt": "2026-07-28T00:49:29.000Z",
+              "uid": "35240-b2ac4918-3bbd-48b4-b144-3d4def8d8a66"
+            }
+          ],
+          "createdAt": "2026-07-28T00:49:29.000Z",
+          "updatedAt": "2026-07-28T00:49:29.000Z",
+          "uid": "35240-dbe62844-06d0-487d-85ac-b806a1b910b9"
+        },
+        {
+          "name": "Amazon MemoryDB CreateCluster",
+          "id": "78d8d4b0-e303-432f-9a92-fc0d8f1e1ba0",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-amz-json-1.1"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/clusters",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "clusters"
+              ]
+            },
+            "description": "Creates a cluster."
+          },
+          "response": [
+            {
+              "id": "10c9d105-4e7a-4e00-9913-701c7766f8b5",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/x-amz-json-1.1"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}"
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/clusters",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "clusters"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"Clusters\": [\n    {\n      \"ARN\": \"<string>\",\n      \"AvailabilityMode\": \"MultiAZ\",\n      \"Description\": \"<string>\",\n      \"EngineVersion\": \"<string>\",\n      \"Name\": \"<string>\",\n      \"NodeType\": \"<string>\",\n      \"NumberOfShards\": \"<integer>\",\n      \"Status\": \"<string>\",\n      \"TLSEnabled\": \"<boolean>\"\n    },\n    {\n      \"ARN\": \"<string>\",\n      \"AvailabilityMode\": \"SingleAZ\",\n      \"Description\": \"<string>\",\n      \"EngineVersion\": \"<string>\",\n      \"Name\": \"<string>\",\n      \"NodeType\": \"<string>\",\n      \"NumberOfShards\": \"<integer>\",\n      \"Status\": \"<string>\",\n      \"TLSEnabled\": \"<boolean>\"\n    }\n  ],\n  \"NextToken\": \"<string>\"\n}",
+              "createdAt": "2026-07-28T00:49:29.000Z",
+              "updatedAt": "2026-07-28T00:49:29.000Z",
+              "uid": "35240-10c9d105-4e7a-4e00-9913-701c7766f8b5"
+            },
+            {
+              "id": "345a434a-47c7-4984-a4e4-c9c5a187082e",
+              "name": "Bad request",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/x-amz-json-1.1"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}"
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/clusters",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "clusters"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T00:49:29.000Z",
+              "updatedAt": "2026-07-28T00:49:29.000Z",
+              "uid": "35240-345a434a-47c7-4984-a4e4-c9c5a187082e"
+            },
+            {
+              "id": "f3f9c520-70d9-4d55-b933-76f2c033c852",
+              "name": "Internal server error",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/x-amz-json-1.1"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}"
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/clusters",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "clusters"
+                  ]
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T00:49:29.000Z",
+              "updatedAt": "2026-07-28T00:49:29.000Z",
+              "uid": "35240-f3f9c520-70d9-4d55-b933-76f2c033c852"
+            }
+          ],
+          "createdAt": "2026-07-28T00:49:29.000Z",
+          "updatedAt": "2026-07-28T00:49:29.000Z",
+          "uid": "35240-78d8d4b0-e303-432f-9a92-fc0d8f1e1ba0"
+        },
+        {
+          "name": "Amazon MemoryDB UpdateCluster",
+          "id": "bff48fee-7cd0-408d-b97a-6c113fbc55fd",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-amz-json-1.1"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/clusters",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "clusters"
+              ]
+            },
+            "description": "Modifies the settings for a cluster."
+          },
+          "response": [
+            {
+              "id": "9b349aa1-d729-4a53-b3f5-0edac3de6e0e",
+              "name": "Success",
+              "originalRequest": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/x-amz-json-1.1"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}"
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/clusters",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "clusters"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"Clusters\": [\n    {\n      \"ARN\": \"<string>\",\n      \"AvailabilityMode\": \"MultiAZ\",\n      \"Description\": \"<string>\",\n      \"EngineVersion\": \"<string>\",\n      \"Name\": \"<string>\",\n      \"NodeType\": \"<string>\",\n      \"NumberOfShards\": \"<integer>\",\n      \"Status\": \"<string>\",\n      \"TLSEnabled\": \"<boolean>\"\n    },\n    {\n      \"ARN\": \"<string>\",\n      \"AvailabilityMode\": \"SingleAZ\",\n      \"Description\": \"<string>\",\n      \"EngineVersion\": \"<string>\",\n      \"Name\": \"<string>\",\n      \"NodeType\": \"<string>\",\n      \"NumberOfShards\": \"<integer>\",\n      \"Status\": \"<string>\",\n      \"TLSEnabled\": \"<boolean>\"\n    }\n  ],\n  \"NextToken\": \"<string>\"\n}",
+              "createdAt": "2026-07-28T00:49:29.000Z",
+              "updatedAt": "2026-07-28T00:49:29.000Z",
+              "uid": "35240-9b349aa1-d729-4a53-b3f5-0edac3de6e0e"
+            },
+            {
+              "id": "1463e5e5-fa30-4e1f-aa87-130cc98101c1",
+              "name": "Bad request",
+              "originalRequest": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/x-amz-json-1.1"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}"
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/clusters",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "clusters"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T00:49:29.000Z",
+              "updatedAt": "2026-07-28T00:49:29.000Z",
+              "uid": "35240-1463e5e5-fa30-4e1f-aa87-130cc98101c1"
+            },
+            {
+              "id": "e7f80b02-5f15-4069-9a12-decb844db082",
+              "name": "Internal server error",
+              "originalRequest": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/x-amz-json-1.1"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}"
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/clusters",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "clusters"
+                  ]
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T00:49:29.000Z",
+              "updatedAt": "2026-07-28T00:49:29.000Z",
+              "uid": "35240-e7f80b02-5f15-4069-9a12-decb844db082"
+            }
+          ],
+          "createdAt": "2026-07-28T00:49:29.000Z",
+          "updatedAt": "2026-07-28T00:49:29.000Z",
+          "uid": "35240-bff48fee-7cd0-408d-b97a-6c113fbc55fd"
+        }
+      ],
+      "id": "533d61b3-8a0a-4d2f-aaae-b12a74a95765",
+      "createdAt": "2026-07-28T00:49:29.000Z",
+      "updatedAt": "2026-07-28T00:49:29.000Z",
+      "uid": "35240-533d61b3-8a0a-4d2f-aaae-b12a74a95765"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://memory-db.us-east-1.amazonaws.com"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "provider": "amazon-memorydb",
+  "sources": [
+    "amazon-memorydb-acls-api-openapi.yml",
+    "amazon-memorydb-clusters-api-openapi.yml",
+    "amazon-memorydb-engineversions-api-openapi.yml",
+    "amazon-memorydb-events-api-openapi.yml",
+    "amazon-memorydb-nodetypes-api-openapi.yml",
+    "amazon-memorydb-parametergroups-api-openapi.yml",
+    "amazon-memorydb-reservednodes-api-openapi.yml",
+    "amazon-memorydb-shards-api-openapi.yml",
+    "amazon-memorydb-snapshots-api-openapi.yml",
+    "amazon-memorydb-subnetgroups-api-openapi.yml",
+    "amazon-memorydb-tags-api-openapi.yml",
+    "amazon-memorydb-users-api-openapi.yml"
+  ],
+  "outputs": [
+    "amazon-memorydb-acls-api-openapi.yml",
+    "amazon-memorydb-clusters-api-openapi.yml",
+    "amazon-memorydb-engineversions-api-openapi.yml",
+    "amazon-memorydb-events-api-openapi.yml",
+    "amazon-memorydb-nodetypes-api-openapi.yml",
+    "amazon-memorydb-parametergroups-api-openapi.yml",
+    "amazon-memorydb-reservednodes-api-openapi.yml",
+    "amazon-memorydb-shards-api-openapi.yml",
+    "amazon-memorydb-snapshots-api-openapi.yml",
+    "amazon-memorydb-subnetgroups-api-openapi.yml",
+    "amazon-memorydb-tags-api-openapi.yml",
+    "amazon-memorydb-users-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

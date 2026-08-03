@@ -1,0 +1,1250 @@
+components:
+  schemas:
+    ACL:
+      description: An Access Control List.
+      properties:
+        ARN:
+          description: The Amazon Resource Name (ARN) of the ACL.
+          type: string
+        Name:
+          description: The name of the Access Control List.
+          type: string
+        Status:
+          description: Indicates the current status of the ACL.
+          type: string
+        UserNames:
+          description: The list of user names that belong to the ACL.
+          items:
+            type: string
+          type: array
+      type: object
+    Cluster:
+      description: An Amazon MemoryDB cluster.
+      properties:
+        ARN:
+          description: The Amazon Resource Name (ARN) of the cluster.
+          type: string
+        AvailabilityMode:
+          description: Indicates if the cluster has a Multi-AZ configuration.
+          enum:
+          - SingleAZ
+          - MultiAZ
+          type: string
+        Description:
+          description: A description of the cluster.
+          type: string
+        EngineVersion:
+          description: The Redis engine version the cluster is running.
+          type: string
+        Name:
+          description: The user-supplied name of the cluster.
+          type: string
+        NodeType:
+          description: The cluster's node type.
+          type: string
+        NumberOfShards:
+          description: The number of shards in the cluster.
+          type: integer
+        Status:
+          description: The status of the cluster.
+          type: string
+        TLSEnabled:
+          description: A flag to indicate if In-transit encryption is enabled.
+          type: boolean
+      type: object
+    CreateClusterRequest:
+      properties:
+        ACLName:
+          description: The name of the Access Control List to associate with the cluster.
+          type: string
+        ClusterName:
+          description: The name of the cluster.
+          type: string
+        Description:
+          description: An optional description of the cluster.
+          type: string
+        EngineVersion:
+          description: The version number of the Redis engine to use.
+          type: string
+        NodeType:
+          description: The compute and memory capacity of the nodes.
+          type: string
+        NumReplicasPerShard:
+          description: The number of replicas to apply to each shard.
+          type: integer
+        NumShards:
+          description: The number of shards the cluster will contain.
+          type: integer
+        TLSEnabled:
+          description: A flag to enable in-transit encryption.
+          type: boolean
+      required:
+      - ClusterName
+      - NodeType
+      - ACLName
+      type: object
+    DescribeClustersResponse:
+      properties:
+        Clusters:
+          description: A list of clusters.
+          items:
+            $ref: '#/components/schemas/Cluster'
+          type: array
+        NextToken:
+          description: An optional argument to pass in case the total number of records exceeds the value of MaxResults.
+          type: string
+      type: object
+    ParameterGroup:
+      description: Represents the output of a CreateParameterGroup operation.
+      properties:
+        ARN:
+          description: The Amazon Resource Name (ARN) of the parameter group.
+          type: string
+        Description:
+          description: A description of the parameter group.
+          type: string
+        Family:
+          description: The name of the parameter group family.
+          type: string
+        Name:
+          description: The name of the parameter group.
+          type: string
+      type: object
+    Snapshot:
+      description: Represents a copy of an entire cluster.
+      properties:
+        ARN:
+          description: The ARN of the snapshot.
+          type: string
+        ClusterConfiguration:
+          description: The configuration of the cluster from which the snapshot was taken.
+          type: object
+        KmsKeyId:
+          description: The ID of the KMS key used to encrypt the snapshot.
+          type: string
+        Name:
+          description: The name of the snapshot.
+          type: string
+        Status:
+          description: The status of the snapshot.
+          type: string
+      type: object
+    SubnetGroup:
+      description: 'Represents the output of one of the following operations: CreateSubnetGroup / DescribeSubnetGroups.'
+      properties:
+        ARN:
+          description: The ARN of the subnet group.
+          type: string
+        Description:
+          description: A description of the subnet group.
+          type: string
+        Name:
+          description: The name of the subnet group.
+          type: string
+        VpcId:
+          description: The Amazon Virtual Private Cloud identifier (VPC ID) of the subnet group.
+          type: string
+      type: object
+    Tag:
+      description: A tag that can be added to an MemoryDB resource.
+      properties:
+        Key:
+          description: The key for the tag.
+          type: string
+        Value:
+          description: The tag's value.
+          type: string
+      type: object
+    User:
+      description: Represents a MemoryDB user.
+      properties:
+        ACLNames:
+          description: The names of the Access Control Lists to which the user belongs.
+          items:
+            type: string
+          type: array
+        ARN:
+          description: The Amazon Resource Name (ARN) of the user.
+          type: string
+        Name:
+          description: The name of the user.
+          type: string
+        Status:
+          description: Indicates the user status.
+          type: string
+      type: object
+  securitySchemes:
+    awsSigV4:
+      description: AWS Signature Version 4
+      in: header
+      name: Authorization
+      type: apiKey
+info:
+  description: Amazon MemoryDB for Redis is a durable, in-memory database service that delivers ultra-fast performance compatible with Redis and Memcached.
+  title: Amazon MemoryDB
+  version: '2021-01-01'
+  x-generated-from: documentation
+  x-last-validated: '2026-04-19'
+openapi: 3.0.3
+paths:
+  /acls:
+    delete:
+      description: Deletes an Access Control List.
+      operationId: DeleteACL
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ACL'
+              examples:
+                DeleteACL200Example:
+                  summary: Default DeleteACL 200 response
+                  x-microcks-default: true
+                  value:
+                    ARN: arn:aws:service:us-east-1:123456789012:resource/example
+                    Name: example-resource
+                    Status: ACTIVE
+                    UserNames: []
+          description: Success
+        '400':
+          description: Bad request
+        '500':
+          description: Internal server error
+      summary: Amazon MemoryDB DeleteACL
+      tags:
+      - ACLs
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+    get:
+      description: Returns a list of ACLs.
+      operationId: DescribeACLs
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ACL'
+              examples:
+                DescribeACLs200Example:
+                  summary: Default DescribeACLs 200 response
+                  x-microcks-default: true
+                  value:
+                    ARN: arn:aws:service:us-east-1:123456789012:resource/example
+                    Name: example-resource
+                    Status: ACTIVE
+                    UserNames: []
+          description: Success
+        '400':
+          description: Bad request
+        '500':
+          description: Internal server error
+      summary: Amazon MemoryDB DescribeACLs
+      tags:
+      - ACLs
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+    post:
+      description: Creates an Access Control List.
+      operationId: CreateACL
+      requestBody:
+        content:
+          application/x-amz-json-1.1:
+            schema:
+              type: object
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ACL'
+              examples:
+                CreateACL200Example:
+                  summary: Default CreateACL 200 response
+                  x-microcks-default: true
+                  value:
+                    ARN: arn:aws:service:us-east-1:123456789012:resource/example
+                    Name: example-resource
+                    Status: ACTIVE
+                    UserNames: []
+          description: Success
+        '400':
+          description: Bad request
+        '500':
+          description: Internal server error
+      summary: Amazon MemoryDB CreateACL
+      tags:
+      - ACLs
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+    put:
+      description: Changes the list of users that belong to the Access Control List.
+      operationId: UpdateACL
+      requestBody:
+        content:
+          application/x-amz-json-1.1:
+            schema:
+              type: object
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ACL'
+              examples:
+                UpdateACL200Example:
+                  summary: Default UpdateACL 200 response
+                  x-microcks-default: true
+                  value:
+                    ARN: arn:aws:service:us-east-1:123456789012:resource/example
+                    Name: example-resource
+                    Status: ACTIVE
+                    UserNames: []
+          description: Success
+        '400':
+          description: Bad request
+        '500':
+          description: Internal server error
+      summary: Amazon MemoryDB UpdateACL
+      tags:
+      - ACLs
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /clusters:
+    delete:
+      description: Deletes a cluster.
+      operationId: DeleteCluster
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DescribeClustersResponse'
+              examples:
+                DeleteCluster200Example:
+                  summary: Default DeleteCluster 200 response
+                  x-microcks-default: true
+                  value:
+                    Clusters: []
+                    NextToken: example-value
+          description: Success
+        '400':
+          description: Bad request
+        '500':
+          description: Internal server error
+      summary: Amazon MemoryDB DeleteCluster
+      tags:
+      - Clusters
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+    get:
+      description: Returns information about all provisioned clusters.
+      operationId: DescribeClusters
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DescribeClustersResponse'
+              examples:
+                DescribeClusters200Example:
+                  summary: Default DescribeClusters 200 response
+                  x-microcks-default: true
+                  value:
+                    Clusters: []
+                    NextToken: example-value
+          description: Success
+        '400':
+          description: Bad request
+        '500':
+          description: Internal server error
+      summary: Amazon MemoryDB DescribeClusters
+      tags:
+      - Clusters
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+    post:
+      description: Creates a cluster.
+      operationId: CreateCluster
+      requestBody:
+        content:
+          application/x-amz-json-1.1:
+            schema:
+              type: object
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DescribeClustersResponse'
+              examples:
+                CreateCluster200Example:
+                  summary: Default CreateCluster 200 response
+                  x-microcks-default: true
+                  value:
+                    Clusters: []
+                    NextToken: example-value
+          description: Success
+        '400':
+          description: Bad request
+        '500':
+          description: Internal server error
+      summary: Amazon MemoryDB CreateCluster
+      tags:
+      - Clusters
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+    put:
+      description: Modifies the settings for a cluster.
+      operationId: UpdateCluster
+      requestBody:
+        content:
+          application/x-amz-json-1.1:
+            schema:
+              type: object
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DescribeClustersResponse'
+              examples:
+                UpdateCluster200Example:
+                  summary: Default UpdateCluster 200 response
+                  x-microcks-default: true
+                  value:
+                    Clusters: []
+                    NextToken: example-value
+          description: Success
+        '400':
+          description: Bad request
+        '500':
+          description: Internal server error
+      summary: Amazon MemoryDB UpdateCluster
+      tags:
+      - Clusters
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /engineversions:
+    get:
+      description: Returns a list of the available Redis engine versions.
+      operationId: DescribeEngineVersions
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+              examples:
+                DescribeEngineVersions200Example:
+                  summary: Default DescribeEngineVersions 200 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+          description: Success
+        '400':
+          description: Bad request
+        '500':
+          description: Internal server error
+      summary: Amazon MemoryDB DescribeEngineVersions
+      tags:
+      - EngineVersions
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /events:
+    get:
+      description: Returns events related to clusters, security groups, and parameter groups.
+      operationId: DescribeEvents
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+              examples:
+                DescribeEvents200Example:
+                  summary: Default DescribeEvents 200 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+          description: Success
+        '400':
+          description: Bad request
+        '500':
+          description: Internal server error
+      summary: Amazon MemoryDB DescribeEvents
+      tags:
+      - Events
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /nodetypes:
+    get:
+      description: Lists all available node types that you can scale to from your cluster.
+      operationId: ListAllowedNodeTypeUpdates
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+              examples:
+                ListAllowedNodeTypeUpdates200Example:
+                  summary: Default ListAllowedNodeTypeUpdates 200 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+          description: Success
+        '400':
+          description: Bad request
+        '500':
+          description: Internal server error
+      summary: Amazon MemoryDB ListAllowedNodeTypeUpdates
+      tags:
+      - NodeTypes
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /parametergroups:
+    delete:
+      description: Deletes the specified parameter group.
+      operationId: DeleteParameterGroup
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ParameterGroup'
+              examples:
+                DeleteParameterGroup200Example:
+                  summary: Default DeleteParameterGroup 200 response
+                  x-microcks-default: true
+                  value:
+                    ARN: arn:aws:service:us-east-1:123456789012:resource/example
+                    Description: Example description
+                    Family: example-value
+                    Name: example-resource
+          description: Success
+        '400':
+          description: Bad request
+        '500':
+          description: Internal server error
+      summary: Amazon MemoryDB DeleteParameterGroup
+      tags:
+      - ParameterGroups
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+    get:
+      description: Returns a list of parameter group descriptions.
+      operationId: DescribeParameterGroups
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ParameterGroup'
+              examples:
+                DescribeParameterGroups200Example:
+                  summary: Default DescribeParameterGroups 200 response
+                  x-microcks-default: true
+                  value:
+                    ARN: arn:aws:service:us-east-1:123456789012:resource/example
+                    Description: Example description
+                    Family: example-value
+                    Name: example-resource
+          description: Success
+        '400':
+          description: Bad request
+        '500':
+          description: Internal server error
+      summary: Amazon MemoryDB DescribeParameterGroups
+      tags:
+      - ParameterGroups
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+    post:
+      description: Creates a new MemoryDB parameter group.
+      operationId: CreateParameterGroup
+      requestBody:
+        content:
+          application/x-amz-json-1.1:
+            schema:
+              type: object
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ParameterGroup'
+              examples:
+                CreateParameterGroup200Example:
+                  summary: Default CreateParameterGroup 200 response
+                  x-microcks-default: true
+                  value:
+                    ARN: arn:aws:service:us-east-1:123456789012:resource/example
+                    Description: Example description
+                    Family: example-value
+                    Name: example-resource
+          description: Success
+        '400':
+          description: Bad request
+        '500':
+          description: Internal server error
+      summary: Amazon MemoryDB CreateParameterGroup
+      tags:
+      - ParameterGroups
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+    put:
+      description: Updates the parameters of a parameter group.
+      operationId: UpdateParameterGroup
+      requestBody:
+        content:
+          application/x-amz-json-1.1:
+            schema:
+              type: object
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ParameterGroup'
+              examples:
+                UpdateParameterGroup200Example:
+                  summary: Default UpdateParameterGroup 200 response
+                  x-microcks-default: true
+                  value:
+                    ARN: arn:aws:service:us-east-1:123456789012:resource/example
+                    Description: Example description
+                    Family: example-value
+                    Name: example-resource
+          description: Success
+        '400':
+          description: Bad request
+        '500':
+          description: Internal server error
+      summary: Amazon MemoryDB UpdateParameterGroup
+      tags:
+      - ParameterGroups
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /reservednodes:
+    get:
+      description: Returns information about reserved nodes for this account.
+      operationId: DescribeReservedNodes
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+              examples:
+                DescribeReservedNodes200Example:
+                  summary: Default DescribeReservedNodes 200 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+          description: Success
+        '400':
+          description: Bad request
+        '500':
+          description: Internal server error
+      summary: Amazon MemoryDB DescribeReservedNodes
+      tags:
+      - ReservedNodes
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+    post:
+      description: Allows you to purchase a reserved node offering.
+      operationId: PurchaseReservedNodesOffering
+      requestBody:
+        content:
+          application/x-amz-json-1.1:
+            schema:
+              type: object
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+              examples:
+                PurchaseReservedNodesOffering200Example:
+                  summary: Default PurchaseReservedNodesOffering 200 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+          description: Success
+        '400':
+          description: Bad request
+        '500':
+          description: Internal server error
+      summary: Amazon MemoryDB PurchaseReservedNodesOffering
+      tags:
+      - ReservedNodes
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /reservednodes/describereservednodesofferings:
+    get:
+      description: Lists available reserved node offerings.
+      operationId: DescribeReservedNodesOfferings
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+              examples:
+                DescribeReservedNodesOfferings200Example:
+                  summary: Default DescribeReservedNodesOfferings 200 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+          description: Success
+        '400':
+          description: Bad request
+        '500':
+          description: Internal server error
+      summary: Amazon MemoryDB DescribeReservedNodesOfferings
+      tags:
+      - ReservedNodes
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /shards:
+    post:
+      description: Used to failover a shard.
+      operationId: FailoverShard
+      requestBody:
+        content:
+          application/x-amz-json-1.1:
+            schema:
+              type: object
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+              examples:
+                FailoverShard200Example:
+                  summary: Default FailoverShard 200 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+          description: Success
+        '400':
+          description: Bad request
+        '500':
+          description: Internal server error
+      summary: Amazon MemoryDB FailoverShard
+      tags:
+      - Shards
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /snapshots:
+    delete:
+      description: Deletes an existing snapshot.
+      operationId: DeleteSnapshot
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Snapshot'
+              examples:
+                DeleteSnapshot200Example:
+                  summary: Default DeleteSnapshot 200 response
+                  x-microcks-default: true
+                  value:
+                    ARN: arn:aws:service:us-east-1:123456789012:resource/example
+                    ClusterConfiguration: {}
+                    KmsKeyId: id-abc123
+                    Name: example-resource
+                    Status: ACTIVE
+          description: Success
+        '400':
+          description: Bad request
+        '500':
+          description: Internal server error
+      summary: Amazon MemoryDB DeleteSnapshot
+      tags:
+      - Snapshots
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+    get:
+      description: Returns information about cluster snapshots.
+      operationId: DescribeSnapshots
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Snapshot'
+              examples:
+                DescribeSnapshots200Example:
+                  summary: Default DescribeSnapshots 200 response
+                  x-microcks-default: true
+                  value:
+                    ARN: arn:aws:service:us-east-1:123456789012:resource/example
+                    ClusterConfiguration: {}
+                    KmsKeyId: id-abc123
+                    Name: example-resource
+                    Status: ACTIVE
+          description: Success
+        '400':
+          description: Bad request
+        '500':
+          description: Internal server error
+      summary: Amazon MemoryDB DescribeSnapshots
+      tags:
+      - Snapshots
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+    post:
+      description: Creates a copy of an entire cluster.
+      operationId: CreateSnapshot
+      requestBody:
+        content:
+          application/x-amz-json-1.1:
+            schema:
+              type: object
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Snapshot'
+              examples:
+                CreateSnapshot200Example:
+                  summary: Default CreateSnapshot 200 response
+                  x-microcks-default: true
+                  value:
+                    ARN: arn:aws:service:us-east-1:123456789012:resource/example
+                    ClusterConfiguration: {}
+                    KmsKeyId: id-abc123
+                    Name: example-resource
+                    Status: ACTIVE
+          description: Success
+        '400':
+          description: Bad request
+        '500':
+          description: Internal server error
+      summary: Amazon MemoryDB CreateSnapshot
+      tags:
+      - Snapshots
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /snapshots/copysnapshot:
+    post:
+      description: Makes a copy of an existing snapshot.
+      operationId: CopySnapshot
+      requestBody:
+        content:
+          application/x-amz-json-1.1:
+            schema:
+              type: object
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Snapshot'
+              examples:
+                CopySnapshot200Example:
+                  summary: Default CopySnapshot 200 response
+                  x-microcks-default: true
+                  value:
+                    ARN: arn:aws:service:us-east-1:123456789012:resource/example
+                    ClusterConfiguration: {}
+                    KmsKeyId: id-abc123
+                    Name: example-resource
+                    Status: ACTIVE
+          description: Success
+        '400':
+          description: Bad request
+        '500':
+          description: Internal server error
+      summary: Amazon MemoryDB CopySnapshot
+      tags:
+      - Snapshots
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /subnetgroups:
+    delete:
+      description: Deletes a subnet group.
+      operationId: DeleteSubnetGroup
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SubnetGroup'
+              examples:
+                DeleteSubnetGroup200Example:
+                  summary: Default DeleteSubnetGroup 200 response
+                  x-microcks-default: true
+                  value:
+                    ARN: arn:aws:service:us-east-1:123456789012:resource/example
+                    Description: Example description
+                    Name: example-resource
+                    VpcId: id-abc123
+          description: Success
+        '400':
+          description: Bad request
+        '500':
+          description: Internal server error
+      summary: Amazon MemoryDB DeleteSubnetGroup
+      tags:
+      - SubnetGroups
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+    get:
+      description: Returns a list of subnet group descriptions.
+      operationId: DescribeSubnetGroups
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SubnetGroup'
+              examples:
+                DescribeSubnetGroups200Example:
+                  summary: Default DescribeSubnetGroups 200 response
+                  x-microcks-default: true
+                  value:
+                    ARN: arn:aws:service:us-east-1:123456789012:resource/example
+                    Description: Example description
+                    Name: example-resource
+                    VpcId: id-abc123
+          description: Success
+        '400':
+          description: Bad request
+        '500':
+          description: Internal server error
+      summary: Amazon MemoryDB DescribeSubnetGroups
+      tags:
+      - SubnetGroups
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+    post:
+      description: Creates a subnet group.
+      operationId: CreateSubnetGroup
+      requestBody:
+        content:
+          application/x-amz-json-1.1:
+            schema:
+              type: object
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SubnetGroup'
+              examples:
+                CreateSubnetGroup200Example:
+                  summary: Default CreateSubnetGroup 200 response
+                  x-microcks-default: true
+                  value:
+                    ARN: arn:aws:service:us-east-1:123456789012:resource/example
+                    Description: Example description
+                    Name: example-resource
+                    VpcId: id-abc123
+          description: Success
+        '400':
+          description: Bad request
+        '500':
+          description: Internal server error
+      summary: Amazon MemoryDB CreateSubnetGroup
+      tags:
+      - SubnetGroups
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+    put:
+      description: Updates a subnet group.
+      operationId: UpdateSubnetGroup
+      requestBody:
+        content:
+          application/x-amz-json-1.1:
+            schema:
+              type: object
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SubnetGroup'
+              examples:
+                UpdateSubnetGroup200Example:
+                  summary: Default UpdateSubnetGroup 200 response
+                  x-microcks-default: true
+                  value:
+                    ARN: arn:aws:service:us-east-1:123456789012:resource/example
+                    Description: Example description
+                    Name: example-resource
+                    VpcId: id-abc123
+          description: Success
+        '400':
+          description: Bad request
+        '500':
+          description: Internal server error
+      summary: Amazon MemoryDB UpdateSubnetGroup
+      tags:
+      - SubnetGroups
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /tags:
+    delete:
+      description: Use this operation to remove tags on a resource.
+      operationId: UntagResource
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+              examples:
+                UntagResource200Example:
+                  summary: Default UntagResource 200 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+          description: Success
+        '400':
+          description: Bad request
+        '500':
+          description: Internal server error
+      summary: Amazon MemoryDB UntagResource
+      tags:
+      - Tags
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+    get:
+      description: Lists all tags currently on a named resource.
+      operationId: ListTags
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+              examples:
+                ListTags200Example:
+                  summary: Default ListTags 200 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+          description: Success
+        '400':
+          description: Bad request
+        '500':
+          description: Internal server error
+      summary: Amazon MemoryDB ListTags
+      tags:
+      - Tags
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+    post:
+      description: A tag is a key-value pair where the key and value are case-sensitive.
+      operationId: TagResource
+      requestBody:
+        content:
+          application/x-amz-json-1.1:
+            schema:
+              type: object
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+              examples:
+                TagResource200Example:
+                  summary: Default TagResource 200 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+          description: Success
+        '400':
+          description: Bad request
+        '500':
+          description: Internal server error
+      summary: Amazon MemoryDB TagResource
+      tags:
+      - Tags
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /users:
+    delete:
+      description: Deletes a user.
+      operationId: DeleteUser
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+              examples:
+                DeleteUser200Example:
+                  summary: Default DeleteUser 200 response
+                  x-microcks-default: true
+                  value:
+                    ACLNames: []
+                    ARN: arn:aws:service:us-east-1:123456789012:resource/example
+                    Name: example-resource
+                    Status: ACTIVE
+          description: Success
+        '400':
+          description: Bad request
+        '500':
+          description: Internal server error
+      summary: Amazon MemoryDB DeleteUser
+      tags:
+      - Users
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+    get:
+      description: Returns a list of users.
+      operationId: DescribeUsers
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+              examples:
+                DescribeUsers200Example:
+                  summary: Default DescribeUsers 200 response
+                  x-microcks-default: true
+                  value:
+                    ACLNames: []
+                    ARN: arn:aws:service:us-east-1:123456789012:resource/example
+                    Name: example-resource
+                    Status: ACTIVE
+          description: Success
+        '400':
+          description: Bad request
+        '500':
+          description: Internal server error
+      summary: Amazon MemoryDB DescribeUsers
+      tags:
+      - Users
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+    post:
+      description: Creates a MemoryDB user.
+      operationId: CreateUser
+      requestBody:
+        content:
+          application/x-amz-json-1.1:
+            schema:
+              type: object
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+              examples:
+                CreateUser200Example:
+                  summary: Default CreateUser 200 response
+                  x-microcks-default: true
+                  value:
+                    ACLNames: []
+                    ARN: arn:aws:service:us-east-1:123456789012:resource/example
+                    Name: example-resource
+                    Status: ACTIVE
+          description: Success
+        '400':
+          description: Bad request
+        '500':
+          description: Internal server error
+      summary: Amazon MemoryDB CreateUser
+      tags:
+      - Users
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+    put:
+      description: Changes user password(s) and/or access string.
+      operationId: UpdateUser
+      requestBody:
+        content:
+          application/x-amz-json-1.1:
+            schema:
+              type: object
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+              examples:
+                UpdateUser200Example:
+                  summary: Default UpdateUser 200 response
+                  x-microcks-default: true
+                  value:
+                    ACLNames: []
+                    ARN: arn:aws:service:us-east-1:123456789012:resource/example
+                    Name: example-resource
+                    Status: ACTIVE
+          description: Success
+        '400':
+          description: Bad request
+        '500':
+          description: Internal server error
+      summary: Amazon MemoryDB UpdateUser
+      tags:
+      - Users
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+security:
+- awsSigV4: []
+servers:
+- description: Amazon MemoryDB API endpoint (region-specific)
+  url: https://memory-db.us-east-1.amazonaws.com

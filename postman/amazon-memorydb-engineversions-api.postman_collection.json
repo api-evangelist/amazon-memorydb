@@ -1,0 +1,188 @@
+{
+  "info": {
+    "_postman_id": "82cac1f3-00ef-4d0b-9af0-f35b622653ea",
+    "name": "Amazon MemoryDB ACLs EngineVersions API",
+    "description": "Amazon MemoryDB for Redis is a durable, in-memory database service that delivers ultra-fast performance compatible with Redis and Memcached.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T00:49:29.000Z",
+    "updatedAt": "2026-07-28T00:49:29.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-82cac1f3-00ef-4d0b-9af0-f35b622653ea"
+  },
+  "item": [
+    {
+      "name": "engineversions",
+      "item": [
+        {
+          "name": "Amazon MemoryDB DescribeEngineVersions",
+          "id": "42ee1f0b-bcb0-4bd6-b9e5-799a803831ac",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/engineversions",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "engineversions"
+              ]
+            },
+            "description": "Returns a list of the available Redis engine versions."
+          },
+          "response": [
+            {
+              "id": "dc3bec7c-8488-49c6-bae5-acbd60982ab2",
+              "name": "Success",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/engineversions",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "engineversions"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T00:49:30.000Z",
+              "updatedAt": "2026-07-28T00:49:30.000Z",
+              "uid": "35240-dc3bec7c-8488-49c6-bae5-acbd60982ab2"
+            },
+            {
+              "id": "c2afc512-4bd9-4831-b153-bbffb159c933",
+              "name": "Bad request",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/engineversions",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "engineversions"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T00:49:30.000Z",
+              "updatedAt": "2026-07-28T00:49:30.000Z",
+              "uid": "35240-c2afc512-4bd9-4831-b153-bbffb159c933"
+            },
+            {
+              "id": "09bd9196-258c-4b96-9286-f31744605bb6",
+              "name": "Internal server error",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/engineversions",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "engineversions"
+                  ]
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T00:49:30.000Z",
+              "updatedAt": "2026-07-28T00:49:30.000Z",
+              "uid": "35240-09bd9196-258c-4b96-9286-f31744605bb6"
+            }
+          ],
+          "createdAt": "2026-07-28T00:49:30.000Z",
+          "updatedAt": "2026-07-28T00:49:30.000Z",
+          "uid": "35240-42ee1f0b-bcb0-4bd6-b9e5-799a803831ac"
+        }
+      ],
+      "id": "3d1b9902-a06f-476b-ac36-1b7a5b7faec4",
+      "createdAt": "2026-07-28T00:49:29.000Z",
+      "updatedAt": "2026-07-28T00:49:29.000Z",
+      "uid": "35240-3d1b9902-a06f-476b-ac36-1b7a5b7faec4"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://memory-db.us-east-1.amazonaws.com"
+    }
+  ]
+}
