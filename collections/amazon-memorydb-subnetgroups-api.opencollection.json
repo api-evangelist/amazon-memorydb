@@ -1,0 +1,78 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Amazon MemoryDB ACLs SubnetGroups API",
+    "version": "2021-01-01"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "SubnetGroups",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Amazon MemoryDB DescribeSubnetGroups",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://memory-db.us-east-1.amazonaws.com/subnetgroups"
+          },
+          "docs": "Returns a list of subnet group descriptions."
+        },
+        {
+          "info": {
+            "name": "Amazon MemoryDB CreateSubnetGroup",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://memory-db.us-east-1.amazonaws.com/subnetgroups",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a subnet group."
+        },
+        {
+          "info": {
+            "name": "Amazon MemoryDB UpdateSubnetGroup",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://memory-db.us-east-1.amazonaws.com/subnetgroups",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates a subnet group."
+        },
+        {
+          "info": {
+            "name": "Amazon MemoryDB DeleteSubnetGroup",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://memory-db.us-east-1.amazonaws.com/subnetgroups"
+          },
+          "docs": "Deletes a subnet group."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

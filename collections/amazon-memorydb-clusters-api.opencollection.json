@@ -1,0 +1,78 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Amazon MemoryDB ACLs Clusters API",
+    "version": "2021-01-01"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Clusters",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Amazon MemoryDB DescribeClusters",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://memory-db.us-east-1.amazonaws.com/clusters"
+          },
+          "docs": "Returns information about all provisioned clusters."
+        },
+        {
+          "info": {
+            "name": "Amazon MemoryDB CreateCluster",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://memory-db.us-east-1.amazonaws.com/clusters",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a cluster."
+        },
+        {
+          "info": {
+            "name": "Amazon MemoryDB UpdateCluster",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://memory-db.us-east-1.amazonaws.com/clusters",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Modifies the settings for a cluster."
+        },
+        {
+          "info": {
+            "name": "Amazon MemoryDB DeleteCluster",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://memory-db.us-east-1.amazonaws.com/clusters"
+          },
+          "docs": "Deletes a cluster."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

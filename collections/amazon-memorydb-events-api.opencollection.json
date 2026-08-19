@@ -1,0 +1,37 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Amazon MemoryDB ACLs Events API",
+    "version": "2021-01-01"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Events",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Amazon MemoryDB DescribeEvents",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://memory-db.us-east-1.amazonaws.com/events"
+          },
+          "docs": "Returns events related to clusters, security groups, and parameter groups."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,41 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Amazon MemoryDB ACLs Shards API",
+    "version": "2021-01-01"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Shards",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Amazon MemoryDB FailoverShard",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://memory-db.us-east-1.amazonaws.com/shards",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Used to failover a shard."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

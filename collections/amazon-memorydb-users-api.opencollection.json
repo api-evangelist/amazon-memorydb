@@ -1,0 +1,78 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Amazon MemoryDB ACLs Users API",
+    "version": "2021-01-01"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Users",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Amazon MemoryDB DescribeUsers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://memory-db.us-east-1.amazonaws.com/users"
+          },
+          "docs": "Returns a list of users."
+        },
+        {
+          "info": {
+            "name": "Amazon MemoryDB CreateUser",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://memory-db.us-east-1.amazonaws.com/users",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a MemoryDB user."
+        },
+        {
+          "info": {
+            "name": "Amazon MemoryDB UpdateUser",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://memory-db.us-east-1.amazonaws.com/users",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Changes user password(s) and/or access string."
+        },
+        {
+          "info": {
+            "name": "Amazon MemoryDB DeleteUser",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://memory-db.us-east-1.amazonaws.com/users"
+          },
+          "docs": "Deletes a user."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

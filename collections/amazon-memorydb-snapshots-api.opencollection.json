@@ -1,0 +1,78 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Amazon MemoryDB ACLs Snapshots API",
+    "version": "2021-01-01"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Snapshots",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Amazon MemoryDB DescribeSnapshots",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://memory-db.us-east-1.amazonaws.com/snapshots"
+          },
+          "docs": "Returns information about cluster snapshots."
+        },
+        {
+          "info": {
+            "name": "Amazon MemoryDB CreateSnapshot",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://memory-db.us-east-1.amazonaws.com/snapshots",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a copy of an entire cluster."
+        },
+        {
+          "info": {
+            "name": "Amazon MemoryDB DeleteSnapshot",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://memory-db.us-east-1.amazonaws.com/snapshots"
+          },
+          "docs": "Deletes an existing snapshot."
+        },
+        {
+          "info": {
+            "name": "Amazon MemoryDB CopySnapshot",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://memory-db.us-east-1.amazonaws.com/snapshots/copysnapshot",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Makes a copy of an existing snapshot."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

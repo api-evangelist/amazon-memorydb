@@ -1,0 +1,78 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Amazon MemoryDB ACLs API",
+    "version": "2021-01-01"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "ACLs",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Amazon MemoryDB DescribeACLs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://memory-db.us-east-1.amazonaws.com/acls"
+          },
+          "docs": "Returns a list of ACLs."
+        },
+        {
+          "info": {
+            "name": "Amazon MemoryDB CreateACL",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://memory-db.us-east-1.amazonaws.com/acls",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates an Access Control List."
+        },
+        {
+          "info": {
+            "name": "Amazon MemoryDB UpdateACL",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://memory-db.us-east-1.amazonaws.com/acls",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Changes the list of users that belong to the Access Control List."
+        },
+        {
+          "info": {
+            "name": "Amazon MemoryDB DeleteACL",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://memory-db.us-east-1.amazonaws.com/acls"
+          },
+          "docs": "Deletes an Access Control List."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

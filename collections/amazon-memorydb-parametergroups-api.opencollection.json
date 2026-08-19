@@ -1,0 +1,78 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Amazon MemoryDB ACLs ParameterGroups API",
+    "version": "2021-01-01"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "ParameterGroups",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Amazon MemoryDB DescribeParameterGroups",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://memory-db.us-east-1.amazonaws.com/parametergroups"
+          },
+          "docs": "Returns a list of parameter group descriptions."
+        },
+        {
+          "info": {
+            "name": "Amazon MemoryDB CreateParameterGroup",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://memory-db.us-east-1.amazonaws.com/parametergroups",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a new MemoryDB parameter group."
+        },
+        {
+          "info": {
+            "name": "Amazon MemoryDB UpdateParameterGroup",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://memory-db.us-east-1.amazonaws.com/parametergroups",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates the parameters of a parameter group."
+        },
+        {
+          "info": {
+            "name": "Amazon MemoryDB DeleteParameterGroup",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://memory-db.us-east-1.amazonaws.com/parametergroups"
+          },
+          "docs": "Deletes the specified parameter group."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
