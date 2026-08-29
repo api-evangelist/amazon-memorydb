@@ -1,7 +1,7 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
   description: Amazon MemoryDB for Redis is a durable, in-memory database service that delivers ultra-fast performance compatible with Redis and Memcached.
-  title: Amazon MemoryDB ACLs Users API
+  title: Amazon MemoryDB Users API
   version: '2021-01-01'
   x-generated-from: documentation
   x-last-validated: '2026-04-19'
