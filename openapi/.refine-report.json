@@ -1,8 +1,8 @@
 {
   "provider": "amazon-memorydb",
   "sources": [
-    "_original/amazon-memorydb-openapi-original.yml",
-    "_original/openapi.yml"
+    "_original/openapi.yml",
+    "_ae-authored/amazon-memorydb-openapi-original.yml"
   ],
   "outputs": [
     "amazon-memorydb-acls-api-openapi.yml",
@@ -22,7 +22,8 @@
   "errors": [],
   "warnings": [],
   "notes": [
-    "sourced from openapi/_original/ (2 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "openapi.yml: upgraded openapi 3.0.0 -> OpenAPI 3.2.0",
     "amazon-memorydb-openapi-original.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
     "amazon-memorydb-openapi-original.yml: declared missing tag: ACLs",
     "amazon-memorydb-openapi-original.yml: declared missing tag: Clusters",
@@ -35,21 +36,7 @@
     "amazon-memorydb-openapi-original.yml: declared missing tag: Snapshots",
     "amazon-memorydb-openapi-original.yml: declared missing tag: SubnetGroups",
     "amazon-memorydb-openapi-original.yml: declared missing tag: Tags",
-    "amazon-memorydb-openapi-original.yml: declared missing tag: Users",
-    "openapi.yml: upgraded openapi 3.0.0 -> OpenAPI 3.2.0"
+    "amazon-memorydb-openapi-original.yml: declared missing tag: Users"
   ],
-  "skipped": [
-    "amazon-memorydb-acls-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "amazon-memorydb-clusters-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "amazon-memorydb-engineversions-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "amazon-memorydb-events-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "amazon-memorydb-nodetypes-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "amazon-memorydb-parametergroups-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "amazon-memorydb-reservednodes-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "amazon-memorydb-shards-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "amazon-memorydb-snapshots-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "amazon-memorydb-subnetgroups-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "amazon-memorydb-tags-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "amazon-memorydb-users-api-openapi.yml: previously refined output, superseded by openapi/_original/"
-  ]
+  "skipped": []
 }
