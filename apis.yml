@@ -86,7 +86,7 @@ apis:
   humanURL: https://aws.amazon.com/memorydb/
   baseURL: https://memory-db.us-east-1.amazonaws.com
   tags:
-  - EngineVersions
+  - Engine Versions
   tags_raw:
   - EngineVersions
   properties:
@@ -144,7 +144,7 @@ apis:
   humanURL: https://aws.amazon.com/memorydb/
   baseURL: https://memory-db.us-east-1.amazonaws.com
   tags:
-  - ParameterGroups
+  - Parameter Groups
   tags_raw:
   - ParameterGroups
   properties:
@@ -218,7 +218,7 @@ apis:
   humanURL: https://aws.amazon.com/memorydb/
   baseURL: https://memory-db.us-east-1.amazonaws.com
   tags:
-  - SubnetGroups
+  - Subnet Groups
   tags_raw:
   - SubnetGroups
   properties:
