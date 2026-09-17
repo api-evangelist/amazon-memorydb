@@ -41,26 +41,6 @@ created: '2026-03-16'
 modified: '2026-09-16'
 specificationVersion: '0.23'
 apis:
-- aid: amazon-memorydb:amazon-memorydb-acls-api
-  name: Amazon MemoryDB ACLs API
-  description: The ACLs API from Amazon MemoryDB — 1 operation(s) for acls.
-  humanURL: https://aws.amazon.com/memorydb/
-  baseURL: https://memory-db.us-east-1.amazonaws.com
-  tags:
-  - ACL
-  tags_raw:
-  - ACLs
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-memorydb-acls-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/memorydb/
-  - type: GettingStarted
-    url: https://aws.amazon.com/memorydb/getting-started/
-  - type: Pricing
-    url: https://aws.amazon.com/memorydb/pricing/
-  - type: FAQ
-    url: https://aws.amazon.com/memorydb/faqs/
 - aid: amazon-memorydb:amazon-memorydb-clusters-api
   name: Amazon MemoryDB Clusters API
   description: The Clusters API from Amazon MemoryDB — 1 operation(s) for clusters.
@@ -73,26 +53,6 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/amazon-memorydb-clusters-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/memorydb/
-  - type: GettingStarted
-    url: https://aws.amazon.com/memorydb/getting-started/
-  - type: Pricing
-    url: https://aws.amazon.com/memorydb/pricing/
-  - type: FAQ
-    url: https://aws.amazon.com/memorydb/faqs/
-- aid: amazon-memorydb:amazon-memorydb-engineversions-api
-  name: Amazon MemoryDB EngineVersions API
-  description: The EngineVersions API from Amazon MemoryDB — 1 operation(s) for engineversions.
-  humanURL: https://aws.amazon.com/memorydb/
-  baseURL: https://memory-db.us-east-1.amazonaws.com
-  tags:
-  - Engine Versions
-  tags_raw:
-  - EngineVersions
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-memorydb-engineversions-api-openapi.yml
   - type: Documentation
     url: https://docs.aws.amazon.com/memorydb/
   - type: GettingStarted
@@ -131,26 +91,6 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/amazon-memorydb-nodetypes-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/memorydb/
-  - type: GettingStarted
-    url: https://aws.amazon.com/memorydb/getting-started/
-  - type: Pricing
-    url: https://aws.amazon.com/memorydb/pricing/
-  - type: FAQ
-    url: https://aws.amazon.com/memorydb/faqs/
-- aid: amazon-memorydb:amazon-memorydb-parametergroups-api
-  name: Amazon MemoryDB ParameterGroups API
-  description: The ParameterGroups API from Amazon MemoryDB — 1 operation(s) for parametergroups.
-  humanURL: https://aws.amazon.com/memorydb/
-  baseURL: https://memory-db.us-east-1.amazonaws.com
-  tags:
-  - Parameter Groups
-  tags_raw:
-  - ParameterGroups
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-memorydb-parametergroups-api-openapi.yml
   - type: Documentation
     url: https://docs.aws.amazon.com/memorydb/
   - type: GettingStarted
@@ -213,26 +153,6 @@ apis:
     url: https://aws.amazon.com/memorydb/pricing/
   - type: FAQ
     url: https://aws.amazon.com/memorydb/faqs/
-- aid: amazon-memorydb:amazon-memorydb-subnetgroups-api
-  name: Amazon MemoryDB SubnetGroups API
-  description: The SubnetGroups API from Amazon MemoryDB — 1 operation(s) for subnetgroups.
-  humanURL: https://aws.amazon.com/memorydb/
-  baseURL: https://memory-db.us-east-1.amazonaws.com
-  tags:
-  - Subnet Groups
-  tags_raw:
-  - SubnetGroups
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-memorydb-subnetgroups-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/memorydb/
-  - type: GettingStarted
-    url: https://aws.amazon.com/memorydb/getting-started/
-  - type: Pricing
-    url: https://aws.amazon.com/memorydb/pricing/
-  - type: FAQ
-    url: https://aws.amazon.com/memorydb/faqs/
 - aid: amazon-memorydb:amazon-memorydb-tags-api
   name: Amazon MemoryDB Tags API
   description: The Tags API from Amazon MemoryDB — 1 operation(s) for tags.
@@ -263,6 +183,78 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/amazon-memorydb-users-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/memorydb/
+  - type: GettingStarted
+    url: https://aws.amazon.com/memorydb/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/memorydb/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/memorydb/faqs/
+- aid: amazon-memorydb:amazon-memorydb-acls-api
+  name: Amazon MemoryDB AC Ls API
+  description: The ACLs API from Amazon MemoryDB — 1 operation(s) for acls.
+  humanURL: https://aws.amazon.com/memorydb/
+  baseURL: https://memory-db.us-east-1.amazonaws.com
+  tags:
+  - ACLs
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-memorydb-acls-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/memorydb/
+  - type: GettingStarted
+    url: https://aws.amazon.com/memorydb/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/memorydb/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/memorydb/faqs/
+- aid: amazon-memorydb:amazon-memorydb-engine-versions-api
+  name: Amazon MemoryDB Engine Versions API
+  description: The Engine Versions API from Amazon MemoryDB — 1 operation(s) for engine versions.
+  humanURL: https://aws.amazon.com/memorydb/
+  baseURL: https://memory-db.us-east-1.amazonaws.com
+  tags:
+  - Engine Versions
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-memorydb-engine-versions-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/memorydb/
+  - type: GettingStarted
+    url: https://aws.amazon.com/memorydb/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/memorydb/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/memorydb/faqs/
+- aid: amazon-memorydb:amazon-memorydb-parameter-groups-api
+  name: Amazon MemoryDB Parameter Groups API
+  description: The Parameter Groups API from Amazon MemoryDB — 1 operation(s) for parameter groups.
+  humanURL: https://aws.amazon.com/memorydb/
+  baseURL: https://memory-db.us-east-1.amazonaws.com
+  tags:
+  - Parameter Groups
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-memorydb-parameter-groups-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/memorydb/
+  - type: GettingStarted
+    url: https://aws.amazon.com/memorydb/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/memorydb/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/memorydb/faqs/
+- aid: amazon-memorydb:amazon-memorydb-subnet-groups-api
+  name: Amazon MemoryDB Subnet Groups API
+  description: The Subnet Groups API from Amazon MemoryDB — 1 operation(s) for subnet groups.
+  humanURL: https://aws.amazon.com/memorydb/
+  baseURL: https://memory-db.us-east-1.amazonaws.com
+  tags:
+  - Subnet Groups
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-memorydb-subnet-groups-api-openapi.yml
   - type: Documentation
     url: https://docs.aws.amazon.com/memorydb/
   - type: GettingStarted
