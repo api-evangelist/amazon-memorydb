@@ -197,6 +197,8 @@ apis:
   humanURL: https://aws.amazon.com/memorydb/
   baseURL: https://memory-db.us-east-1.amazonaws.com
   tags:
+  - ACL
+  tags_raw:
   - ACLs
   properties:
   - type: OpenAPI
