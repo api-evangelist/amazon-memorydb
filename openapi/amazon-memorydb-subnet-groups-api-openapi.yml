@@ -1,7 +1,7 @@
 openapi: 3.2.0
 info:
   description: Amazon MemoryDB for Redis is a durable, in-memory database service that delivers ultra-fast performance compatible with Redis and Memcached.
-  title: Amazon MemoryDB Parameter Groups API
+  title: Amazon MemoryDB Subnet Groups API
   version: '2021-01-01'
   x-generated-from: documentation
   x-last-validated: '2026-04-19'
@@ -11,70 +11,70 @@ servers:
 security:
 - awsSigV4: []
 tags:
-- name: ParameterGroups
+- name: Subnet Groups
 paths:
-  /parametergroups:
+  /subnetgroups:
     delete:
-      description: Deletes the specified parameter group.
-      operationId: DeleteParameterGroup
+      description: Deletes a subnet group.
+      operationId: DeleteSubnetGroup
       responses:
         '200':
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ParameterGroup'
+                $ref: '#/components/schemas/SubnetGroup'
               examples:
-                DeleteParameterGroup200Example:
-                  summary: Default DeleteParameterGroup 200 response
+                DeleteSubnetGroup200Example:
+                  summary: Default DeleteSubnetGroup 200 response
                   x-microcks-default: true
                   value:
                     ARN: arn:aws:service:us-east-1:123456789012:resource/example
                     Description: Example description
-                    Family: example-value
                     Name: example-resource
+                    VpcId: id-abc123
           description: Success
         '400':
           description: Bad request
         '500':
           description: Internal server error
-      summary: Amazon MemoryDB DeleteParameterGroup
+      summary: Amazon MemoryDB DeleteSubnetGroup
       tags:
-      - ParameterGroups
+      - Subnet Groups
       x-microcks-operation:
         delay: 0
         dispatcher: FALLBACK
     get:
-      description: Returns a list of parameter group descriptions.
-      operationId: DescribeParameterGroups
+      description: Returns a list of subnet group descriptions.
+      operationId: DescribeSubnetGroups
       responses:
         '200':
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ParameterGroup'
+                $ref: '#/components/schemas/SubnetGroup'
               examples:
-                DescribeParameterGroups200Example:
-                  summary: Default DescribeParameterGroups 200 response
+                DescribeSubnetGroups200Example:
+                  summary: Default DescribeSubnetGroups 200 response
                   x-microcks-default: true
                   value:
                     ARN: arn:aws:service:us-east-1:123456789012:resource/example
                     Description: Example description
-                    Family: example-value
                     Name: example-resource
+                    VpcId: id-abc123
           description: Success
         '400':
           description: Bad request
         '500':
           description: Internal server error
-      summary: Amazon MemoryDB DescribeParameterGroups
+      summary: Amazon MemoryDB DescribeSubnetGroups
       tags:
-      - ParameterGroups
+      - Subnet Groups
       x-microcks-operation:
         delay: 0
         dispatcher: FALLBACK
     post:
-      description: Creates a new MemoryDB parameter group.
-      operationId: CreateParameterGroup
+      description: Creates a subnet group.
+      operationId: CreateSubnetGroup
       requestBody:
         content:
           application/x-amz-json-1.1:
@@ -86,30 +86,30 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ParameterGroup'
+                $ref: '#/components/schemas/SubnetGroup'
               examples:
-                CreateParameterGroup200Example:
-                  summary: Default CreateParameterGroup 200 response
+                CreateSubnetGroup200Example:
+                  summary: Default CreateSubnetGroup 200 response
                   x-microcks-default: true
                   value:
                     ARN: arn:aws:service:us-east-1:123456789012:resource/example
                     Description: Example description
-                    Family: example-value
                     Name: example-resource
+                    VpcId: id-abc123
           description: Success
         '400':
           description: Bad request
         '500':
           description: Internal server error
-      summary: Amazon MemoryDB CreateParameterGroup
+      summary: Amazon MemoryDB CreateSubnetGroup
       tags:
-      - ParameterGroups
+      - Subnet Groups
       x-microcks-operation:
         delay: 0
         dispatcher: FALLBACK
     put:
-      description: Updates the parameters of a parameter group.
-      operationId: UpdateParameterGroup
+      description: Updates a subnet group.
+      operationId: UpdateSubnetGroup
       requestBody:
         content:
           application/x-amz-json-1.1:
@@ -121,43 +121,43 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ParameterGroup'
+                $ref: '#/components/schemas/SubnetGroup'
               examples:
-                UpdateParameterGroup200Example:
-                  summary: Default UpdateParameterGroup 200 response
+                UpdateSubnetGroup200Example:
+                  summary: Default UpdateSubnetGroup 200 response
                   x-microcks-default: true
                   value:
                     ARN: arn:aws:service:us-east-1:123456789012:resource/example
                     Description: Example description
-                    Family: example-value
                     Name: example-resource
+                    VpcId: id-abc123
           description: Success
         '400':
           description: Bad request
         '500':
           description: Internal server error
-      summary: Amazon MemoryDB UpdateParameterGroup
+      summary: Amazon MemoryDB UpdateSubnetGroup
       tags:
-      - ParameterGroups
+      - Subnet Groups
       x-microcks-operation:
         delay: 0
         dispatcher: FALLBACK
 components:
   schemas:
-    ParameterGroup:
-      description: Represents the output of a CreateParameterGroup operation.
+    SubnetGroup:
+      description: 'Represents the output of one of the following operations: CreateSubnetGroup / DescribeSubnetGroups.'
       properties:
         ARN:
-          description: The Amazon Resource Name (ARN) of the parameter group.
+          description: The ARN of the subnet group.
           type: string
         Description:
-          description: A description of the parameter group.
-          type: string
-        Family:
-          description: The name of the parameter group family.
+          description: A description of the subnet group.
           type: string
         Name:
-          description: The name of the parameter group.
+          description: The name of the subnet group.
+          type: string
+        VpcId:
+          description: The Amazon Virtual Private Cloud identifier (VPC ID) of the subnet group.
           type: string
       type: object
   securitySchemes:

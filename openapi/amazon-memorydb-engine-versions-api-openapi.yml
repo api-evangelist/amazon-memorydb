@@ -11,7 +11,7 @@ servers:
 security:
 - awsSigV4: []
 tags:
-- name: EngineVersions
+- name: Engine Versions
 paths:
   /engineversions:
     get:
@@ -36,7 +36,7 @@ paths:
           description: Internal server error
       summary: Amazon MemoryDB DescribeEngineVersions
       tags:
-      - EngineVersions
+      - Engine Versions
       x-microcks-operation:
         delay: 0
         dispatcher: FALLBACK

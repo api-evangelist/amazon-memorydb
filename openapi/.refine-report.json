@@ -18,7 +18,9 @@
     "amazon-memorydb-tags-api-openapi.yml",
     "amazon-memorydb-users-api-openapi.yml"
   ],
-  "archived": [],
+  "archived": [
+    "deleted 4 superseded output(s) from the previous generation"
+  ],
   "errors": [],
   "warnings": [],
   "notes": [
@@ -36,7 +38,22 @@
     "amazon-memorydb-openapi-original.yml: declared missing tag: Snapshots",
     "amazon-memorydb-openapi-original.yml: declared missing tag: SubnetGroups",
     "amazon-memorydb-openapi-original.yml: declared missing tag: Tags",
-    "amazon-memorydb-openapi-original.yml: declared missing tag: Users"
+    "amazon-memorydb-openapi-original.yml: declared missing tag: Users",
+    "superseded outputs removed: amazon-memorydb-ac-ls-api-openapi.yml, amazon-memorydb-engine-versions-api-openapi.yml, amazon-memorydb-parameter-groups-api-openapi.yml, amazon-memorydb-subnet-groups-api-openapi.yml",
+    "apis.yml register: written (+4 apis, 12 total)"
   ],
-  "skipped": []
+  "skipped": [
+    "amazon-memorydb-ac-ls-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "amazon-memorydb-clusters-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "amazon-memorydb-engine-versions-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "amazon-memorydb-events-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "amazon-memorydb-nodetypes-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "amazon-memorydb-parameter-groups-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "amazon-memorydb-reservednodes-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "amazon-memorydb-shards-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "amazon-memorydb-snapshots-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "amazon-memorydb-subnet-groups-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "amazon-memorydb-tags-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "amazon-memorydb-users-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
