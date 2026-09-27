@@ -19,7 +19,7 @@
     "amazon-memorydb-users-api-openapi.yml"
   ],
   "archived": [
-    "deleted 4 superseded output(s) from the previous generation"
+    "deleted 3 superseded output(s) from the previous generation"
   ],
   "errors": [],
   "warnings": [],
@@ -39,11 +39,11 @@
     "amazon-memorydb-openapi-original.yml: declared missing tag: SubnetGroups",
     "amazon-memorydb-openapi-original.yml: declared missing tag: Tags",
     "amazon-memorydb-openapi-original.yml: declared missing tag: Users",
-    "superseded outputs removed: amazon-memorydb-ac-ls-api-openapi.yml, amazon-memorydb-engine-versions-api-openapi.yml, amazon-memorydb-parameter-groups-api-openapi.yml, amazon-memorydb-subnet-groups-api-openapi.yml",
-    "apis.yml register: written (+4 apis, 12 total)"
+    "superseded outputs removed: amazon-memorydb-engine-versions-api-openapi.yml, amazon-memorydb-parameter-groups-api-openapi.yml, amazon-memorydb-subnet-groups-api-openapi.yml",
+    "apis.yml register: written (+3 apis, 12 total)"
   ],
   "skipped": [
-    "amazon-memorydb-ac-ls-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "amazon-memorydb-acls-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "amazon-memorydb-clusters-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "amazon-memorydb-engine-versions-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "amazon-memorydb-events-api-openapi.yml: previously refined output, superseded by openapi/_original/",

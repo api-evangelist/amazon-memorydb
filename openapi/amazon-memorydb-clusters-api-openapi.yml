@@ -136,17 +136,6 @@ paths:
         dispatcher: FALLBACK
 components:
   schemas:
-    DescribeClustersResponse:
-      properties:
-        Clusters:
-          description: A list of clusters.
-          items:
-            $ref: '#/components/schemas/Cluster'
-          type: array
-        NextToken:
-          description: An optional argument to pass in case the total number of records exceeds the value of MaxResults.
-          type: string
-      type: object
     Cluster:
       description: An Amazon MemoryDB cluster.
       properties:
@@ -180,6 +169,17 @@ components:
         TLSEnabled:
           description: A flag to indicate if In-transit encryption is enabled.
           type: boolean
+      type: object
+    DescribeClustersResponse:
+      properties:
+        Clusters:
+          description: A list of clusters.
+          items:
+            $ref: '#/components/schemas/Cluster'
+          type: array
+        NextToken:
+          description: An optional argument to pass in case the total number of records exceeds the value of MaxResults.
+          type: string
       type: object
   securitySchemes:
     awsSigV4:
