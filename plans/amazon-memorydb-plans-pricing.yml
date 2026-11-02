@@ -51,7 +51,7 @@ plans:
   price_text: Reserved nodes provide a significant discount off the ongoing hourly usage rate
   period: none
 x-canonical:
-  generated: '2026-11-01'
+  generated: '2026-11-02'
   vocabulary: engine/economics/plans-canonical.yml
   models:
   - hybrid
