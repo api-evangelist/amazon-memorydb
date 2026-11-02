@@ -1,0 +1,100 @@
+# Pricing transcribed from the provider's own page — see provenance. Numbers are quoted, not derived.
+generated: '2026-10-28'
+method: searched
+source: https://aws.amazon.com/memorydb/pricing/
+sources:
+- https://aws.amazon.com/memorydb/pricing/
+provenance:
+  tool: engine/economics/harvest_pricing.py
+  run: 20261028T161713
+  grounding: every price_text was found verbatim in the fetched page text
+audience: developer-api
+pricing_basis: usage-other
+delivery:
+  delivery: managed
+  method: page
+  read: '2026-10-28'
+published: true
+note: Main rate tables are unrendered template tokens; numeric prices appear only in the Data Written
+  line and the four pricing examples, which were quoted verbatim.
+plan_count: 5
+currency: USD
+plans:
+- name: On-demand nodes (db.r6g.xlarge, US West Oregon, per pricing example)
+  price_text: $0.432/hour
+  price: 0.432
+  currency: USD
+  period: per-use
+  unit: node-hour
+- name: Data written (Redis OSS)
+  price_text: $0.20/GB (same price in all regions)
+  price: 0.2
+  currency: USD
+  period: per-use
+  unit: GB written
+  included_quota: First 10TB / Month $0/GB (Valkey)
+- name: Snapshot storage (per pricing example)
+  price_text: $0.021 per GB-month
+  price: 0.021
+  currency: USD
+  period: month
+  unit: GB-month
+  included_quota: No additional charge for snapshot storage of up to 100% of your total MemoryDB cluster
+    storage for a region
+- name: Multi-Region data transfer OUT (per pricing example)
+  price_text: $0.02/GB for US East (N. Virginia) and US West (Oregon)
+  price: 0.02
+  currency: USD
+  period: per-use
+  unit: GB
+- name: Reserved nodes
+  price_text: Reserved nodes provide a significant discount off the ongoing hourly usage rate
+  period: none
+x-canonical:
+  generated: '2026-11-01'
+  vocabulary: engine/economics/plans-canonical.yml
+  models:
+  - hybrid
+  units:
+  - compute
+  - data
+  plans:
+  - name: On-demand nodes (db.r6g.xlarge, US West Oregon, per pricing example)
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - compute
+    periods:
+    - other
+  - name: Data written (Redis OSS)
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - data
+    periods:
+    - other
+  - name: Snapshot storage (per pricing example)
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - data
+    periods:
+    - month
+  - name: Multi-Region data transfer OUT (per pricing example)
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - data
+    periods:
+    - other
+  - name: Reserved nodes
+    access: other
+    model: unstated
+    model_how: derived
+    units: []
+    periods:
+    - none
