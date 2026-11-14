@@ -8,6 +8,12 @@ artifacts:
   authentication/amazon-memorydb-authentication.yml:
     method: derived
     evidence: declared in the artifact
+  certification/observations-2026-11-11.jsonl:
+    method: unknown
+    evidence: no authorship recorded
+  certification/status.yml:
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-memorydb-acls-api.opencollection.json:
     method: derived
     evidence: openapi/amazon-memorydb-acls-api
@@ -86,6 +92,21 @@ artifacts:
   collections/openapi.postman_collection.json:
     method: unknown
     evidence: no authorship recorded
+  compliance/amazon-memorydb-compliance.yml:
+    method: harvested
+    evidence: declared in the artifact
+  conformance/amazon-memorydb-conformance.yml:
+    method: derived
+    evidence: declared in the artifact
+  conventions/amazon-memorydb-conventions.yml:
+    method: derived
+    evidence: declared in the artifact
+  data-model/amazon-memorydb-data-model.yml:
+    method: derived
+    evidence: declared in the artifact
+  errors/amazon-memorydb-problem-types.yml:
+    method: derived
+    evidence: declared in the artifact
   examples/memorydb-api-acl-example.json:
     method: unknown
     evidence: no authorship recorded
@@ -119,16 +140,202 @@ artifacts:
   front-door-ai/2026-09-17.yml:
     method: unknown
     evidence: no authorship recorded
+  hosts/amazon-memorydb-hosts.yml:
+    method: derived
+    evidence: declared in the artifact
   integrations/_index.yml:
     method: generated
     evidence: carries an API Evangelist house phrase
   integrations/amazon-memorydb-integration-edges.yml:
     method: unknown
     evidence: no authorship recorded
+  json-ld/amazon-memorydb-context.jsonld:
+    method: unknown
+    evidence: no authorship recorded
   json-ld/amazon-memorydb-memorydb-api-context.jsonld:
     method: unknown
     evidence: no authorship recorded
   json-ld/json-ld.yml:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-memorydb-batch-update-cluster-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-memorydb-copy-snapshot-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-memorydb-create-aclrequest-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-memorydb-create-aclresponse-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-memorydb-create-cluster-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-memorydb-create-multi-region-cluster-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-memorydb-create-multi-region-cluster-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-memorydb-create-parameter-group-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-memorydb-create-snapshot-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-memorydb-create-snapshot-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-memorydb-create-subnet-group-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-memorydb-create-subnet-group-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-memorydb-create-user-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-memorydb-create-user-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-memorydb-delete-aclrequest-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-memorydb-delete-cluster-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-memorydb-delete-multi-region-cluster-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-memorydb-delete-parameter-group-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-memorydb-delete-snapshot-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-memorydb-delete-snapshot-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-memorydb-delete-subnet-group-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-memorydb-delete-user-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-memorydb-describe-acls-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-memorydb-describe-acls-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-memorydb-describe-clusters-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-memorydb-describe-clusters-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-memorydb-describe-engine-versions-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-memorydb-describe-engine-versions-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-memorydb-describe-events-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-memorydb-describe-events-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-memorydb-describe-multi-region-clusters-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-memorydb-describe-multi-region-clusters-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-memorydb-describe-multi-region-parameter-groups-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-memorydb-describe-multi-region-parameters-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-memorydb-describe-parameter-groups-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-memorydb-describe-parameter-groups-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-memorydb-describe-parameters-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-memorydb-describe-reserved-nodes-offerings-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-memorydb-describe-reserved-nodes-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-memorydb-describe-reserved-nodes-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-memorydb-describe-service-updates-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-memorydb-describe-snapshots-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-memorydb-describe-snapshots-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-memorydb-describe-subnet-groups-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-memorydb-describe-subnet-groups-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-memorydb-describe-users-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-memorydb-describe-users-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-memorydb-failover-shard-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-memorydb-failover-shard-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-memorydb-list-allowed-node-type-updates-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-memorydb-list-allowed-node-type-updates-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-memorydb-list-tags-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-memorydb-list-tags-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-memorydb-reset-parameter-group-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-memorydb-update-aclrequest-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-memorydb-update-cluster-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-memorydb-update-multi-region-cluster-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-memorydb-update-parameter-group-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-memorydb-update-subnet-group-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-memorydb-update-user-request-schema.json:
     method: unknown
     evidence: no authorship recorded
   json-schema/json-schema.yml:
@@ -191,7 +398,7 @@ artifacts:
   kin/checks-2026-10-23T222754.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
-  kin/checks-2026-11-02T082323.yml:
+  kin/checks-2026-11-06T143934.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
   kin/score-2026-09-23T000603.yml:
@@ -260,10 +467,21 @@ artifacts:
   kin/score-2026-11-02T082323.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
-  openapi/_original/openapi.yml:
-    method: harvested
-    evidence: found in openapi/_original/; the fetch URL and bytes were not recorded, so byte-identity
-      to the provider's source is unverified
+  kin/score-2026-11-06T143934.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  lifecycle/amazon-memorydb-lifecycle.yml:
+    method: derived
+    evidence: declared in the artifact
+  llms/amazon-memorydb-llms-provenance.yml:
+    method: unknown
+    evidence: no authorship recorded
+  llms/amazon-memorydb-llms.txt:
+    method: unknown
+    evidence: no authorship recorded
+  mcp/amazon-memorydb-mcp.yml:
+    method: searched
+    evidence: declared in the artifact
   openapi/amazon-memorydb-acls-api-openapi.yml:
     method: unknown
     evidence: no authorship recorded
@@ -301,11 +519,17 @@ artifacts:
     method: unknown
     evidence: no authorship recorded
   openapi/amazon-memorydb-tags-api-openapi.yml:
-    method: harvested
-    evidence: declared in the artifact
+    method: unknown
+    evidence: no authorship recorded
   openapi/amazon-memorydb-users-api-openapi.yml:
     method: unknown
     evidence: no authorship recorded
+  packages/amazon-memorydb-packages.yml:
+    method: unknown
+    evidence: no authorship recorded
+  patterns/amazon-memorydb-patterns.yml:
+    method: derived
+    evidence: declared in the artifact
   plans/amazon-memorydb-plans-pricing.yml:
     method: searched
     evidence: declared in the artifact
@@ -345,10 +569,16 @@ artifacts:
   postman/amazon-memorydb-users-api.postman_collection.json:
     method: derived
     evidence: openapi/amazon-memorydb-users-api
+  privacy/amazon-memorydb-privacy-policy.yml:
+    method: harvested
+    evidence: declared in the artifact
   rate-limits/amazon-memorydb-rate-limits.yml:
     method: generated
     evidence: declared in the artifact
   rules/amazon-memorydb-jsonschema-spectral-rules.yml:
+    method: generated
+    evidence: declared in the artifact
+  rules/amazon-memorydb-rules.yml:
     method: generated
     evidence: declared in the artifact
   rules/amazon-memorydb-spectral-rules.yml:
@@ -367,8 +597,27 @@ artifacts:
     method: generated
     evidence: declared in the artifact
   smithy/memorydb-2021-01-01.json:
+    method: harvested
+    evidence: byte-identical to https://raw.githubusercontent.com/aws/api-models-aws/3cd98287b471c106254abd89279cc87308d38bfd/models/memorydb/service/2021-01-01/memorydb-2021-01-01.json
+      (sha256 140a94683a76, fetched 2026-11-11T21:12:56+00:00)
+  terms/amazon-memorydb-terms-of-service.yml:
+    method: harvested
+    evidence: declared in the artifact
+  vendors/amazon-memorydb-vendors.yml:
     method: unknown
     evidence: no authorship recorded
   vocabulary/amazon-memorydb-vocabulary.yaml:
+    method: unknown
+    evidence: no authorship recorded
+  vocabulary/amazon-memorydb-vocabulary.yml:
+    method: derived
+    evidence: declared in the artifact
+  well-known/amazon-memorydb-midway-auth-openid-configuration.json:
+    method: unknown
+    evidence: no authorship recorded
+  well-known/amazon-memorydb-security.txt:
+    method: unknown
+    evidence: no authorship recorded
+  well-known/amazon-memorydb-well-known.yml:
     method: unknown
     evidence: no authorship recorded

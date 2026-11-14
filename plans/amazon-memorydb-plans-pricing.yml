@@ -2,6 +2,7 @@
 generated: '2026-10-28'
 method: searched
 source: https://aws.amazon.com/memorydb/pricing/
+name: Amazon MemoryDB API Plans
 sources:
 - https://aws.amazon.com/memorydb/pricing/
 provenance:
@@ -51,7 +52,7 @@ plans:
   price_text: Reserved nodes provide a significant discount off the ongoing hourly usage rate
   period: none
 x-canonical:
-  generated: '2026-11-06'
+  generated: '2026-11-13'
   vocabulary: engine/economics/plans-canonical.yml
   models:
   - hybrid

@@ -1,9 +1,12 @@
 aid: amazon-memorydb
+
 name: Amazon MemoryDB
-description: Amazon MemoryDB for Redis is a durable, in-memory database service that delivers ultra-fast
-  performance. It is Redis-compatible and provides microsecond reads, low single-digit millisecond writes,
-  and enterprise-grade security.
+
+description: Amazon MemoryDB for Redis is a durable, in-memory database service that delivers ultra-fast performance. It is Redis-compatible and
+  provides microsecond reads, low single-digit millisecond writes, and enterprise-grade security.
+
 type: Index
+
 deliveryModel:
   model: saas
   open_source: false
@@ -16,6 +19,7 @@ deliveryModel:
   - pricing
   generated: '2026-08-28'
   method: derived
+
 accessModel:
   pricing: paid
   onboarding: unknown
@@ -28,9 +32,10 @@ accessModel:
   - plans
   - authentication
   - security
-  generated: '2026-11-06'
+  generated: '2026-11-13'
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/amazon-memorydb.png
+
 tags:
 - Amazon Web Services
 - Database
@@ -41,259 +46,64 @@ tags_raw:
 - Database
 - Redis
 - In-Memory
+
 url: https://raw.githubusercontent.com/api-evangelist/amazon-memorydb/refs/heads/main/apis.yml
+
 created: '2026-03-16'
+
 modified: '2026-09-16'
+
 specificationVersion: '0.23'
-apis:
-- aid: amazon-memorydb:amazon-memorydb-clusters-api
-  name: Amazon MemoryDB Clusters API
-  description: The Clusters API from Amazon MemoryDB — 1 operation(s) for clusters.
-  humanURL: https://aws.amazon.com/memorydb/
-  baseURL: https://memory-db.us-east-1.amazonaws.com
-  tags:
-  - Cluster
-  tags_raw:
-  - Clusters
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-memorydb-clusters-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/memorydb/
-  - type: GettingStarted
-    url: https://aws.amazon.com/memorydb/getting-started/
-  - type: Pricing
-    url: https://aws.amazon.com/memorydb/pricing/
-  - type: FAQ
-    url: https://aws.amazon.com/memorydb/faqs/
-- aid: amazon-memorydb:amazon-memorydb-events-api
-  name: Amazon MemoryDB Events API
-  description: The Events API from Amazon MemoryDB — 1 operation(s) for events.
-  humanURL: https://aws.amazon.com/memorydb/
-  baseURL: https://memory-db.us-east-1.amazonaws.com
-  tags:
-  - Event
-  tags_raw:
-  - Events
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-memorydb-events-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/memorydb/
-  - type: GettingStarted
-    url: https://aws.amazon.com/memorydb/getting-started/
-  - type: Pricing
-    url: https://aws.amazon.com/memorydb/pricing/
-  - type: FAQ
-    url: https://aws.amazon.com/memorydb/faqs/
-- aid: amazon-memorydb:amazon-memorydb-nodetypes-api
-  name: Amazon MemoryDB NodeTypes API
-  description: The NodeTypes API from Amazon MemoryDB — 1 operation(s) for nodetypes.
-  humanURL: https://aws.amazon.com/memorydb/
-  baseURL: https://memory-db.us-east-1.amazonaws.com
-  tags:
-  - NodeTypes
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-memorydb-nodetypes-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/memorydb/
-  - type: GettingStarted
-    url: https://aws.amazon.com/memorydb/getting-started/
-  - type: Pricing
-    url: https://aws.amazon.com/memorydb/pricing/
-  - type: FAQ
-    url: https://aws.amazon.com/memorydb/faqs/
-- aid: amazon-memorydb:amazon-memorydb-reservednodes-api
-  name: Amazon MemoryDB ReservedNodes API
-  description: The ReservedNodes API from Amazon MemoryDB — 2 operation(s) for reservednodes.
-  humanURL: https://aws.amazon.com/memorydb/
-  baseURL: https://memory-db.us-east-1.amazonaws.com
-  tags:
-  - ReservedNodes
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-memorydb-reservednodes-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/memorydb/
-  - type: GettingStarted
-    url: https://aws.amazon.com/memorydb/getting-started/
-  - type: Pricing
-    url: https://aws.amazon.com/memorydb/pricing/
-  - type: FAQ
-    url: https://aws.amazon.com/memorydb/faqs/
-- aid: amazon-memorydb:amazon-memorydb-shards-api
-  name: Amazon MemoryDB Shards API
-  description: The Shards API from Amazon MemoryDB — 1 operation(s) for shards.
-  humanURL: https://aws.amazon.com/memorydb/
-  baseURL: https://memory-db.us-east-1.amazonaws.com
-  tags:
-  - Shards
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-memorydb-shards-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/memorydb/
-  - type: GettingStarted
-    url: https://aws.amazon.com/memorydb/getting-started/
-  - type: Pricing
-    url: https://aws.amazon.com/memorydb/pricing/
-  - type: FAQ
-    url: https://aws.amazon.com/memorydb/faqs/
-- aid: amazon-memorydb:amazon-memorydb-snapshots-api
-  name: Amazon MemoryDB Snapshots API
-  description: The Snapshots API from Amazon MemoryDB — 2 operation(s) for snapshots.
-  humanURL: https://aws.amazon.com/memorydb/
-  baseURL: https://memory-db.us-east-1.amazonaws.com
-  tags:
-  - Snapshots
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-memorydb-snapshots-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/memorydb/
-  - type: GettingStarted
-    url: https://aws.amazon.com/memorydb/getting-started/
-  - type: Pricing
-    url: https://aws.amazon.com/memorydb/pricing/
-  - type: FAQ
-    url: https://aws.amazon.com/memorydb/faqs/
-- aid: amazon-memorydb:amazon-memorydb-tags-api
-  name: Amazon MemoryDB Tags API
-  description: The Tags API from Amazon MemoryDB — 1 operation(s) for tags.
-  humanURL: https://aws.amazon.com/memorydb/
-  baseURL: https://memory-db.us-east-1.amazonaws.com
-  tags:
-  - Tags
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-memorydb-tags-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/memorydb/
-  - type: GettingStarted
-    url: https://aws.amazon.com/memorydb/getting-started/
-  - type: Pricing
-    url: https://aws.amazon.com/memorydb/pricing/
-  - type: FAQ
-    url: https://aws.amazon.com/memorydb/faqs/
-- aid: amazon-memorydb:amazon-memorydb-users-api
-  name: Amazon MemoryDB Users API
-  description: The Users API from Amazon MemoryDB — 1 operation(s) for users.
-  humanURL: https://aws.amazon.com/memorydb/
-  baseURL: https://memory-db.us-east-1.amazonaws.com
-  tags:
-  - User
-  tags_raw:
-  - Users
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-memorydb-users-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/memorydb/
-  - type: GettingStarted
-    url: https://aws.amazon.com/memorydb/getting-started/
-  - type: Pricing
-    url: https://aws.amazon.com/memorydb/pricing/
-  - type: FAQ
-    url: https://aws.amazon.com/memorydb/faqs/
-- aid: amazon-memorydb:amazon-memorydb-acls-api
-  name: Amazon MemoryDB AC Ls API
-  description: The ACLs API from Amazon MemoryDB — 1 operation(s) for acls.
-  humanURL: https://aws.amazon.com/memorydb/
-  baseURL: https://memory-db.us-east-1.amazonaws.com
-  tags:
-  - ACL
-  tags_raw:
-  - ACLs
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-memorydb-acls-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/memorydb/
-  - type: GettingStarted
-    url: https://aws.amazon.com/memorydb/getting-started/
-  - type: Pricing
-    url: https://aws.amazon.com/memorydb/pricing/
-  - type: FAQ
-    url: https://aws.amazon.com/memorydb/faqs/
-- aid: amazon-memorydb:amazon-memorydb-engine-versions-api
-  name: Amazon MemoryDB Engine Versions API
-  description: The Engine Versions API from Amazon MemoryDB — 1 operation(s) for engine versions.
-  humanURL: https://aws.amazon.com/memorydb/
-  baseURL: https://memory-db.us-east-1.amazonaws.com
-  tags:
-  - Engine Versions
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-memorydb-engine-versions-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/memorydb/
-  - type: GettingStarted
-    url: https://aws.amazon.com/memorydb/getting-started/
-  - type: Pricing
-    url: https://aws.amazon.com/memorydb/pricing/
-  - type: FAQ
-    url: https://aws.amazon.com/memorydb/faqs/
-- aid: amazon-memorydb:amazon-memorydb-parameter-groups-api
-  name: Amazon MemoryDB Parameter Groups API
-  description: The Parameter Groups API from Amazon MemoryDB — 1 operation(s) for parameter groups.
-  humanURL: https://aws.amazon.com/memorydb/
-  baseURL: https://memory-db.us-east-1.amazonaws.com
-  tags:
-  - Parameter Groups
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-memorydb-parameter-groups-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/memorydb/
-  - type: GettingStarted
-    url: https://aws.amazon.com/memorydb/getting-started/
-  - type: Pricing
-    url: https://aws.amazon.com/memorydb/pricing/
-  - type: FAQ
-    url: https://aws.amazon.com/memorydb/faqs/
-- aid: amazon-memorydb:amazon-memorydb-subnet-groups-api
-  name: Amazon MemoryDB Subnet Groups API
-  description: The Subnet Groups API from Amazon MemoryDB — 1 operation(s) for subnet groups.
-  humanURL: https://aws.amazon.com/memorydb/
-  baseURL: https://memory-db.us-east-1.amazonaws.com
-  tags:
-  - Subnet Groups
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-memorydb-subnet-groups-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/memorydb/
-  - type: GettingStarted
-    url: https://aws.amazon.com/memorydb/getting-started/
-  - type: Pricing
-    url: https://aws.amazon.com/memorydb/pricing/
-  - type: FAQ
-    url: https://aws.amazon.com/memorydb/faqs/
-- aid: amazon-memorydb:amazon-memorydb-multi-region-cluster-api
-  name: Amazon MemoryDB Memorydb Multi Region Cluster API
-  description: >-
-    The Memorydb Multi Region Cluster API from Amazon MemoryDB — 4 operation(s) for memorydb multi region
-    cluster.
-  humanURL: https://aws.amazon.com/memorydb/
-  baseURL: https://memory-db.us-east-1.amazonaws.com
-  tags:
-  - Memorydb Multi Region Cluster
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-memorydb-multi-region-cluster-api-openapi.yml
-- aid: amazon-memorydb:amazon-memorydb-operations-api
-  name: Amazon MemoryDB Memorydb Operations API
-  description: >-
-    The Memorydb Operations API from Amazon MemoryDB — 10 operation(s) for memorydb operations.
-  humanURL: https://aws.amazon.com/memorydb/
-  baseURL: https://memory-db.us-east-1.amazonaws.com
-  tags:
-  - Memorydb Operations
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-memorydb-operations-api-openapi.yml
+
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com
+
 common:
+- type: Spectral
+  url: rules/amazon-memorydb-spectral-rules.yml
+- type: Spectral
+  url: rules/amazon-memorydb-rules.yml
+- type: Spectral
+  url: rules/amazon-memorydb-jsonschema-spectral-rules.yml
+- type: JSONLD
+  url: json-ld/amazon-memorydb-memorydb-api-context.jsonld
+- type: JSONLD
+  url: json-ld/amazon-memorydb-context.jsonld
+- type: Vocabulary
+  url: vocabulary/amazon-memorydb-vocabulary.yml
+- type: DataModel
+  url: data-model/amazon-memorydb-data-model.yml
+- type: Conventions
+  url: conventions/amazon-memorydb-conventions.yml
+- type: Compliance
+  url: https://aws.amazon.com/compliance/
+- type: Lifecycle
+  url: lifecycle/amazon-memorydb-lifecycle.yml
+- type: ErrorCatalog
+  url: errors/amazon-memorydb-problem-types.yml
+- type: Conformance
+  url: conformance/amazon-memorydb-conformance.yml
+- type: LLMsTxt
+  url: llms/amazon-memorydb-llms.txt
+- type: MCPServer
+  url: mcp/amazon-memorydb-mcp.yml
+- type: SecurityTxt
+  url: well-known/amazon-memorydb-security.txt
+- type: WellKnown
+  url: well-known/amazon-memorydb-well-known.yml
+- type: Hosts
+  url: hosts/amazon-memorydb-hosts.yml
+- type: Vendors
+  url: vendors/amazon-memorydb-vendors.yml
+- type: SignUp
+  url: https://signin.aws.amazon.com/signup?request_type=builderId
+- type: Security
+  url: https://aws.amazon.com/security/?nc2=h_dsc_aa_sec
+- type: Newsroom
+  url: https://aws.amazon.com/media/?nc2=h_sol_ind_med
+- type: GettingStarted
+  url: https://developer.amazon.com/frustration-free-setup
 - type: Plans
   url: plans/amazon-memorydb-plans-pricing.yml
 - type: RateLimits
@@ -380,6 +190,381 @@ common:
     description: Migrate from ElastiCache Redis to MemoryDB for durable storage.
 - type: Integrations
   url: https://aws.amazon.com/partners/
+- type: UsageTerms
+  url: terms/amazon-memorydb-terms-of-service.yml
+- type: DataProcessing
+  url: privacy/amazon-memorydb-privacy-policy.yml
+- type: Attestations
+  url: compliance/amazon-memorydb-compliance.yml
+
+apis:
+- aid: amazon-memorydb:amazon-memorydb-clusters-api
+  name: Amazon MemoryDB Clusters API
+  description: The Clusters API from Amazon MemoryDB — 1 operation(s) for clusters.
+  humanURL: https://aws.amazon.com/memorydb/
+  baseURL: https://memory-db.us-east-1.amazonaws.com
+  tags:
+  - Cluster
+  tags_raw:
+  - Clusters
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-memorydb-clusters-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/memorydb/
+  - type: GettingStarted
+    url: https://aws.amazon.com/memorydb/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/memorydb/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/memorydb/faqs/
+  - type: JSONSchema
+    url: json-schema/amazon-memorydb-create-cluster-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-memorydb-update-cluster-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-memorydb-describe-clusters-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-memorydb-describe-clusters-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-memorydb-delete-cluster-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-memorydb-batch-update-cluster-response-schema.json
+- aid: amazon-memorydb:amazon-memorydb-events-api
+  name: Amazon MemoryDB Events API
+  description: The Events API from Amazon MemoryDB — 1 operation(s) for events.
+  humanURL: https://aws.amazon.com/memorydb/
+  baseURL: https://memory-db.us-east-1.amazonaws.com
+  tags:
+  - Event
+  tags_raw:
+  - Events
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-memorydb-events-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/memorydb/
+  - type: GettingStarted
+    url: https://aws.amazon.com/memorydb/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/memorydb/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/memorydb/faqs/
+  - type: JSONSchema
+    url: json-schema/amazon-memorydb-describe-events-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-memorydb-describe-events-response-schema.json
+- aid: amazon-memorydb:amazon-memorydb-nodetypes-api
+  name: Amazon MemoryDB NodeTypes API
+  description: The NodeTypes API from Amazon MemoryDB — 1 operation(s) for nodetypes.
+  humanURL: https://aws.amazon.com/memorydb/
+  baseURL: https://memory-db.us-east-1.amazonaws.com
+  tags:
+  - NodeTypes
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-memorydb-nodetypes-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/memorydb/
+  - type: GettingStarted
+    url: https://aws.amazon.com/memorydb/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/memorydb/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/memorydb/faqs/
+  - type: JSONSchema
+    url: json-schema/amazon-memorydb-list-allowed-node-type-updates-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-memorydb-list-allowed-node-type-updates-request-schema.json
+- aid: amazon-memorydb:amazon-memorydb-reservednodes-api
+  name: Amazon MemoryDB ReservedNodes API
+  description: The ReservedNodes API from Amazon MemoryDB — 2 operation(s) for reservednodes.
+  humanURL: https://aws.amazon.com/memorydb/
+  baseURL: https://memory-db.us-east-1.amazonaws.com
+  tags:
+  - ReservedNodes
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-memorydb-reservednodes-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/memorydb/
+  - type: GettingStarted
+    url: https://aws.amazon.com/memorydb/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/memorydb/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/memorydb/faqs/
+  - type: JSONSchema
+    url: json-schema/amazon-memorydb-describe-reserved-nodes-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-memorydb-describe-reserved-nodes-response-schema.json
+- aid: amazon-memorydb:amazon-memorydb-shards-api
+  name: Amazon MemoryDB Shards API
+  description: The Shards API from Amazon MemoryDB — 1 operation(s) for shards.
+  humanURL: https://aws.amazon.com/memorydb/
+  baseURL: https://memory-db.us-east-1.amazonaws.com
+  tags:
+  - Shards
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-memorydb-shards-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/memorydb/
+  - type: GettingStarted
+    url: https://aws.amazon.com/memorydb/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/memorydb/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/memorydb/faqs/
+  - type: JSONSchema
+    url: json-schema/amazon-memorydb-failover-shard-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-memorydb-failover-shard-response-schema.json
+- aid: amazon-memorydb:amazon-memorydb-snapshots-api
+  name: Amazon MemoryDB Snapshots API
+  description: The Snapshots API from Amazon MemoryDB — 2 operation(s) for snapshots.
+  humanURL: https://aws.amazon.com/memorydb/
+  baseURL: https://memory-db.us-east-1.amazonaws.com
+  tags:
+  - Snapshots
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-memorydb-snapshots-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/memorydb/
+  - type: GettingStarted
+    url: https://aws.amazon.com/memorydb/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/memorydb/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/memorydb/faqs/
+  - type: JSONSchema
+    url: json-schema/amazon-memorydb-describe-snapshots-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-memorydb-describe-snapshots-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-memorydb-create-snapshot-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-memorydb-delete-snapshot-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-memorydb-create-snapshot-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-memorydb-delete-snapshot-response-schema.json
+- aid: amazon-memorydb:amazon-memorydb-tags-api
+  name: Amazon MemoryDB Tags API
+  description: The Tags API from Amazon MemoryDB — 1 operation(s) for tags.
+  humanURL: https://aws.amazon.com/memorydb/
+  baseURL: https://memory-db.us-east-1.amazonaws.com
+  tags:
+  - Tags
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-memorydb-tags-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/memorydb/
+  - type: GettingStarted
+    url: https://aws.amazon.com/memorydb/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/memorydb/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/memorydb/faqs/
+  - type: JSONSchema
+    url: json-schema/amazon-memorydb-list-tags-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-memorydb-list-tags-response-schema.json
+- aid: amazon-memorydb:amazon-memorydb-users-api
+  name: Amazon MemoryDB Users API
+  description: The Users API from Amazon MemoryDB — 1 operation(s) for users.
+  humanURL: https://aws.amazon.com/memorydb/
+  baseURL: https://memory-db.us-east-1.amazonaws.com
+  tags:
+  - User
+  tags_raw:
+  - Users
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-memorydb-users-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/memorydb/
+  - type: GettingStarted
+    url: https://aws.amazon.com/memorydb/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/memorydb/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/memorydb/faqs/
+  - type: JSONSchema
+    url: json-schema/amazon-memorydb-describe-users-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-memorydb-create-user-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-memorydb-describe-users-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-memorydb-update-user-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-memorydb-delete-user-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-memorydb-create-user-response-schema.json
+- aid: amazon-memorydb:amazon-memorydb-acls-api
+  name: Amazon MemoryDB AC Ls API
+  description: The ACLs API from Amazon MemoryDB — 1 operation(s) for acls.
+  humanURL: https://aws.amazon.com/memorydb/
+  baseURL: https://memory-db.us-east-1.amazonaws.com
+  tags:
+  - ACL
+  tags_raw:
+  - ACLs
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-memorydb-acls-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/memorydb/
+  - type: GettingStarted
+    url: https://aws.amazon.com/memorydb/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/memorydb/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/memorydb/faqs/
+  - type: JSONSchema
+    url: json-schema/amazon-memorydb-describe-acls-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-memorydb-create-aclrequest-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-memorydb-describe-acls-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-memorydb-update-aclrequest-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-memorydb-delete-aclrequest-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-memorydb-create-aclresponse-schema.json
+- aid: amazon-memorydb:amazon-memorydb-engine-versions-api
+  name: Amazon MemoryDB Engine Versions API
+  description: The Engine Versions API from Amazon MemoryDB — 1 operation(s) for engine versions.
+  humanURL: https://aws.amazon.com/memorydb/
+  baseURL: https://memory-db.us-east-1.amazonaws.com
+  tags:
+  - Engine Versions
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-memorydb-engine-versions-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/memorydb/
+  - type: GettingStarted
+    url: https://aws.amazon.com/memorydb/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/memorydb/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/memorydb/faqs/
+  - type: JSONSchema
+    url: json-schema/amazon-memorydb-describe-engine-versions-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-memorydb-describe-engine-versions-response-schema.json
+- aid: amazon-memorydb:amazon-memorydb-parameter-groups-api
+  name: Amazon MemoryDB Parameter Groups API
+  description: The Parameter Groups API from Amazon MemoryDB — 1 operation(s) for parameter groups.
+  humanURL: https://aws.amazon.com/memorydb/
+  baseURL: https://memory-db.us-east-1.amazonaws.com
+  tags:
+  - Parameter Groups
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-memorydb-parameter-groups-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/memorydb/
+  - type: GettingStarted
+    url: https://aws.amazon.com/memorydb/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/memorydb/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/memorydb/faqs/
+  - type: JSONSchema
+    url: json-schema/amazon-memorydb-describe-parameter-groups-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-memorydb-reset-parameter-group-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-memorydb-describe-parameter-groups-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-memorydb-create-parameter-group-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-memorydb-update-parameter-group-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-memorydb-delete-parameter-group-request-schema.json
+- aid: amazon-memorydb:amazon-memorydb-subnet-groups-api
+  name: Amazon MemoryDB Subnet Groups API
+  description: The Subnet Groups API from Amazon MemoryDB — 1 operation(s) for subnet groups.
+  humanURL: https://aws.amazon.com/memorydb/
+  baseURL: https://memory-db.us-east-1.amazonaws.com
+  tags:
+  - Subnet Groups
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-memorydb-subnet-groups-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/memorydb/
+  - type: GettingStarted
+    url: https://aws.amazon.com/memorydb/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/memorydb/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/memorydb/faqs/
+  - type: JSONSchema
+    url: json-schema/amazon-memorydb-describe-subnet-groups-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-memorydb-describe-subnet-groups-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-memorydb-create-subnet-group-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-memorydb-update-subnet-group-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-memorydb-delete-subnet-group-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-memorydb-create-subnet-group-response-schema.json
+- aid: amazon-memorydb:amazon-memorydb-multi-region-cluster-api
+  name: Amazon MemoryDB Memorydb Multi Region Cluster API
+  description: >-
+    The Memorydb Multi Region Cluster API from Amazon MemoryDB — 4 operation(s) for memorydb multi region
+    cluster.
+  humanURL: https://aws.amazon.com/memorydb/
+  baseURL: https://memory-db.us-east-1.amazonaws.com
+  tags:
+  - Memorydb Multi Region Cluster
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-memorydb-multi-region-cluster-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/amazon-memorydb-create-multi-region-cluster-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-memorydb-update-multi-region-cluster-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-memorydb-describe-multi-region-clusters-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-memorydb-describe-multi-region-clusters-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-memorydb-delete-multi-region-cluster-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-memorydb-create-multi-region-cluster-response-schema.json
+- aid: amazon-memorydb:amazon-memorydb-operations-api
+  name: Amazon MemoryDB Memorydb Operations API
+  description: >-
+    The Memorydb Operations API from Amazon MemoryDB — 10 operation(s) for memorydb operations.
+  humanURL: https://aws.amazon.com/memorydb/
+  baseURL: https://memory-db.us-east-1.amazonaws.com
+  tags:
+  - Memorydb Operations
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-memorydb-operations-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/amazon-memorydb-describe-reserved-nodes-offerings-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-memorydb-copy-snapshot-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-memorydb-describe-service-updates-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-memorydb-describe-multi-region-parameters-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-memorydb-describe-parameters-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-memorydb-describe-multi-region-parameter-groups-request-schema.json
 integrations:
 - name: Partner Programs
 - name: Resources
@@ -389,8 +574,12 @@ integrations:
 - name: AWS Partner Central
 - name: Partner Paths
 - name: co-sell with AWS
-maintainers:
-- FN: Kin Lane
-  email: kin@apievangelist.com
+
 x-parent: amazon-web-services
+
 x-relationship: product
+x-enrichment:
+  date: '2026-11-11'
+  status: enriched
+  artifacts_added: 4
+  pass: local-v6
